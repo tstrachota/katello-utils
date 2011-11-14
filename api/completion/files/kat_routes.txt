@@ -1,0 +1,437 @@
+       auto_complete_search_activation_keys GET    /activation_keys/auto_complete_search(.:format)                                       {:controller=>"activation_keys", :action=>"auto_complete_search"}
+                      items_activation_keys GET    /activation_keys/items(.:format)                                                      {:controller=>"activation_keys", :action=>"items"}
+              subscriptions_activation_keys GET    /activation_keys/subscriptions(.:format)                                              {:controller=>"activation_keys", :action=>"subscriptions"}
+       applied_subscriptions_activation_key GET    /activation_keys/:id/applied_subscriptions(.:format)                                  {:controller=>"activation_keys", :action=>"applied_subscriptions"}
+     available_subscriptions_activation_key GET    /activation_keys/:id/available_subscriptions(.:format)                                {:controller=>"activation_keys", :action=>"available_subscriptions"}
+        remove_subscriptions_activation_key POST   /activation_keys/:id/remove_subscriptions(.:format)                                   {:controller=>"activation_keys", :action=>"remove_subscriptions"}
+           add_subscriptions_activation_key POST   /activation_keys/:id/add_subscriptions(.:format)                                      {:controller=>"activation_keys", :action=>"add_subscriptions"}
+                             activation_key POST   /activation_keys/:id(.:format)                                                        {:controller=>"activation_keys", :action=>"update"}
+                            activation_keys GET    /activation_keys(.:format)                                                            {:controller=>"activation_keys", :action=>"index"}
+                                            POST   /activation_keys(.:format)                                                            {:controller=>"activation_keys", :action=>"create"}
+                         new_activation_key GET    /activation_keys/new(.:format)                                                        {:controller=>"activation_keys", :action=>"new"}
+                        edit_activation_key GET    /activation_keys/:id/edit(.:format)                                                   {:controller=>"activation_keys", :action=>"edit"}
+                                            GET    /activation_keys/:id(.:format)                                                        {:controller=>"activation_keys", :action=>"show"}
+                                            PUT    /activation_keys/:id(.:format)                                                        {:controller=>"activation_keys", :action=>"update"}
+                                            DELETE /activation_keys/:id(.:format)                                                        {:controller=>"activation_keys", :action=>"destroy"}
+                                    account POST   /account(.:format)                                                                    {:controller=>"accounts", :action=>"create"}
+                                new_account GET    /account/new(.:format)                                                                {:controller=>"accounts", :action=>"new"}
+                               edit_account GET    /account/edit(.:format)                                                               {:controller=>"accounts", :action=>"edit"}
+                                            GET    /account(.:format)                                                                    {:controller=>"accounts", :action=>"show"}
+                                            PUT    /account(.:format)                                                                    {:controller=>"accounts", :action=>"update"}
+                                            DELETE /account(.:format)                                                                    {:controller=>"accounts", :action=>"destroy"}
+            auto_complete_search_sync_plans GET    /sync_plans/auto_complete_search(.:format)                                            {:controller=>"sync_plans", :action=>"auto_complete_search"}
+                           items_sync_plans GET    /sync_plans/items(.:format)                                                           {:controller=>"sync_plans", :action=>"items"}
+                                 sync_plans GET    /sync_plans(.:format)                                                                 {:controller=>"sync_plans", :action=>"index"}
+                                            POST   /sync_plans(.:format)                                                                 {:controller=>"sync_plans", :action=>"create"}
+                              new_sync_plan GET    /sync_plans/new(.:format)                                                             {:controller=>"sync_plans", :action=>"new"}
+                             edit_sync_plan GET    /sync_plans/:id/edit(.:format)                                                        {:controller=>"sync_plans", :action=>"edit"}
+                                  sync_plan GET    /sync_plans/:id(.:format)                                                             {:controller=>"sync_plans", :action=>"show"}
+                                            PUT    /sync_plans/:id(.:format)                                                             {:controller=>"sync_plans", :action=>"update"}
+                                            DELETE /sync_plans/:id(.:format)                                                             {:controller=>"sync_plans", :action=>"destroy"}
+                       sync_schedules_index GET    /sync_schedules/index(.:format)                                                       {:controller=>"sync_schedules", :action=>"index"}
+                       sync_schedules_apply POST   /sync_schedules/apply(.:format)                                                       {:controller=>"sync_schedules", :action=>"apply"}
+                      sync_management_index GET    /sync_management/index(.:format)                                                      {:controller=>"sync_management", :action=>"index"}
+                       sync_management_sync POST   /sync_management/sync(.:format)                                                       {:controller=>"sync_management", :action=>"sync"}
+                sync_management_sync_status GET    /sync_management/sync_status(.:format)                                                {:controller=>"sync_management", :action=>"sync_status"}
+             sync_management_product_status GET    /sync_management/product_status(.:format)                                             {:controller=>"sync_management", :action=>"product_status"}
+                            sync_management DELETE /sync_management/:id(.:format)                                                        {:controller=>"sync_management", :action=>"destroy"}
+                         notices_note_count GET    /notices/note_count(.:format)                                                         {:controller=>"notices", :action=>"note_count"}
+                            notices_get_new GET    /notices/get_new(.:format)                                                            {:controller=>"notices", :action=>"get_new"}
+               notices_auto_complete_search GET    /notices/auto_complete_search(.:format)                                               {:controller=>"notices", :action=>"auto_complete_search"}
+                            notices_details GET    /notices/:id/details(.:format)                                                        {:controller=>"notices", :action=>"details"}
+                                    notices GET    /notices(.:format)                                                                    {:controller=>"notices", :action=>"show"}
+                                            DELETE /notices(.:format)                                                                    {:controller=>"notices", :action=>"destroy_all"}
+                              subscriptions GET    /subscriptions(.:format)                                                              {:controller=>"subscriptions", :action=>"index"}
+                       sync_dashboard_index GET    /dashboard/sync(.:format)                                                             {:controller=>"dashboard", :action=>"sync"}
+                    notices_dashboard_index GET    /dashboard/notices(.:format)                                                          {:controller=>"dashboard", :action=>"notices"}
+                     errata_dashboard_index GET    /dashboard/errata(.:format)                                                           {:controller=>"dashboard", :action=>"errata"}
+                 promotions_dashboard_index GET    /dashboard/promotions(.:format)                                                       {:controller=>"dashboard", :action=>"promotions"}
+                    systems_dashboard_index GET    /dashboard/systems(.:format)                                                          {:controller=>"dashboard", :action=>"systems"}
+              subscriptions_dashboard_index GET    /dashboard/subscriptions(.:format)                                                    {:controller=>"dashboard", :action=>"subscriptions"}
+                            dashboard_index GET    /dashboard(.:format)                                                                  {:controller=>"dashboard", :action=>"index"}
+                            packages_system GET    /systems/:id/packages(.:format)                                                       {:controller=>"systems", :action=>"packages"}
+                       more_packages_system GET    /systems/:id/more_packages(.:format)                                                  {:controller=>"systems", :action=>"more_packages"}
+                       subscriptions_system GET    /systems/:id/subscriptions(.:format)                                                  {:controller=>"systems", :action=>"subscriptions"}
+                update_subscriptions_system POST   /systems/:id/update_subscriptions(.:format)                                           {:controller=>"systems", :action=>"update_subscriptions"}
+                               facts_system GET    /systems/:id/facts(.:format)                                                          {:controller=>"systems", :action=>"facts"}
+               auto_complete_search_systems GET    /systems/auto_complete_search(.:format)                                               {:controller=>"systems", :action=>"auto_complete_search"}
+                              items_systems GET    /systems/items(.:format)                                                              {:controller=>"systems", :action=>"items"}
+                          env_items_systems GET    /systems/env_items(.:format)                                                          {:controller=>"systems", :action=>"env_items"}
+                       environments_systems GET    /systems/environments(.:format)                                                       {:controller=>"systems", :action=>"environments"}
+                                    systems GET    /systems(.:format)                                                                    {:controller=>"systems", :action=>"index"}
+                                            POST   /systems(.:format)                                                                    {:controller=>"systems", :action=>"create"}
+                                 new_system GET    /systems/new(.:format)                                                                {:controller=>"systems", :action=>"new"}
+                                edit_system GET    /systems/:id/edit(.:format)                                                           {:controller=>"systems", :action=>"edit"}
+                                     system GET    /systems/:id(.:format)                                                                {:controller=>"systems", :action=>"show"}
+                                            PUT    /systems/:id(.:format)                                                                {:controller=>"systems", :action=>"update"}
+                                 operations GET    /operations(.:format)                                                                 {:controller=>"operations", :action=>"index"}
+                          changelog_package GET    /packages/:id/changelog(.:format)                                                     {:controller=>"packages", :action=>"changelog"}
+                           filelist_package GET    /packages/:id/filelist(.:format)                                                      {:controller=>"packages", :action=>"filelist"}
+                       dependencies_package GET    /packages/:id/dependencies(.:format)                                                  {:controller=>"packages", :action=>"dependencies"}
+                                    package GET    /packages/:id(.:format)                                                               {:controller=>"packages", :action=>"show"}
+                           packages_erratum GET    /errata/:id/packages(.:format)                                                        {:controller=>"errata", :action=>"packages"}
+                                    erratum GET    /errata/:id(.:format)                                                                 {:controller=>"errata", :action=>"show"}
+                      filelist_distribution GET    /distributions/:id/filelist(.:format)                                                 {:controller=>"distributions", :action=>"filelist"}
+                               distribution GET    /distributions/:id(.:format)                                                          {:controller=>"distributions", :action=>"show"}
+                                   products POST   /products(.:format)                                                                   {:controller=>"products", :action=>"create"}
+                                new_product GET    /products/new(.:format)                                                               {:controller=>"products", :action=>"new"}
+                               edit_product GET    /products/:id/edit(.:format)                                                          {:controller=>"products", :action=>"edit"}
+                                    product PUT    /products/:id(.:format)                                                               {:controller=>"products", :action=>"update"}
+                                            DELETE /products/:id(.:format)                                                               {:controller=>"products", :action=>"destroy"}
+                               import_owner POST   /owners/:id/import(.:format)                                                          {:controller=>"owners", :action=>"import"}
+                        import_status_owner GET    /owners/:id/import_status(.:format)                                                   {:controller=>"owners", :action=>"import_status"}
+                                     owners GET    /owners(.:format)                                                                     {:controller=>"owners", :action=>"index"}
+                                            POST   /owners(.:format)                                                                     {:controller=>"owners", :action=>"create"}
+                                  new_owner GET    /owners/new(.:format)                                                                 {:controller=>"owners", :action=>"new"}
+                                 edit_owner GET    /owners/:id/edit(.:format)                                                            {:controller=>"owners", :action=>"edit"}
+                                      owner GET    /owners/:id(.:format)                                                                 {:controller=>"owners", :action=>"show"}
+                                            PUT    /owners/:id(.:format)                                                                 {:controller=>"owners", :action=>"update"}
+                                            DELETE /owners/:id(.:format)                                                                 {:controller=>"owners", :action=>"destroy"}
+                 auto_complete_search_users GET    /users/auto_complete_search(.:format)                                                 {:controller=>"users", :action=>"auto_complete_search"}
+                                items_users GET    /users/items(.:format)                                                                {:controller=>"users", :action=>"items"}
+                       enable_helptip_users POST   /users/enable_helptip(.:format)                                                       {:controller=>"users", :action=>"enable_helptip"}
+                      disable_helptip_users POST   /users/disable_helptip(.:format)                                                      {:controller=>"users", :action=>"disable_helptip"}
+                        clear_helptips_user POST   /users/:id/clear_helptips(.:format)                                                   {:controller=>"users", :action=>"clear_helptips"}
+                          update_roles_user PUT    /users/:id/update_roles(.:format)                                                     {:controller=>"users", :action=>"update_roles"}
+                                      users GET    /users(.:format)                                                                      {:controller=>"users", :action=>"index"}
+                                            POST   /users(.:format)                                                                      {:controller=>"users", :action=>"create"}
+                                   new_user GET    /users/new(.:format)                                                                  {:controller=>"users", :action=>"new"}
+                                  edit_user GET    /users/:id/edit(.:format)                                                             {:controller=>"users", :action=>"edit"}
+                                       user GET    /users/:id(.:format)                                                                  {:controller=>"users", :action=>"show"}
+                                            PUT    /users/:id(.:format)                                                                  {:controller=>"users", :action=>"update"}
+                                            DELETE /users/:id(.:format)                                                                  {:controller=>"users", :action=>"destroy"}
+      auto_complete_search_system_templates GET    /system_templates/auto_complete_search(.:format)                                      {:controller=>"system_templates", :action=>"auto_complete_search"}
+                     items_system_templates GET    /system_templates/items(.:format)                                                     {:controller=>"system_templates", :action=>"items"}
+     auto_complete_package_system_templates GET    /system_templates/auto_complete_package(.:format)                                     {:controller=>"system_templates", :action=>"auto_complete_package"}
+          product_packages_system_templates GET    /system_templates/product_packages(.:format)                                          {:controller=>"system_templates", :action=>"product_packages"}
+          promotion_details_system_template GET    /system_templates/:id/promotion_details(.:format)                                     {:controller=>"system_templates", :action=>"promotion_details"}
+                     object_system_template GET    /system_templates/:id/object(.:format)                                                {:controller=>"system_templates", :action=>"object"}
+                   download_system_template GET    /system_templates/:id/download(.:format)                                              {:controller=>"system_templates", :action=>"download"}
+             update_content_system_template PUT    /system_templates/:id/update_content(.:format)                                        {:controller=>"system_templates", :action=>"update_content"}
+                           system_templates GET    /system_templates(.:format)                                                           {:controller=>"system_templates", :action=>"index"}
+                                            POST   /system_templates(.:format)                                                           {:controller=>"system_templates", :action=>"create"}
+                        new_system_template GET    /system_templates/new(.:format)                                                       {:controller=>"system_templates", :action=>"new"}
+                       edit_system_template GET    /system_templates/:id/edit(.:format)                                                  {:controller=>"system_templates", :action=>"edit"}
+                            system_template GET    /system_templates/:id(.:format)                                                       {:controller=>"system_templates", :action=>"show"}
+                                            PUT    /system_templates/:id(.:format)                                                       {:controller=>"system_templates", :action=>"update"}
+                                            DELETE /system_templates/:id(.:format)                                                       {:controller=>"system_templates", :action=>"destroy"}
+              provider_product_repositories GET    /providers/:provider_id/products/:product_id/repositories(.:format)                   {:controller=>"repositories", :action=>"index"}
+                                            POST   /providers/:provider_id/products/:product_id/repositories(.:format)                   {:controller=>"repositories", :action=>"create"}
+            new_provider_product_repository GET    /providers/:provider_id/products/:product_id/repositories/new(.:format)               {:controller=>"repositories", :action=>"new"}
+           edit_provider_product_repository GET    /providers/:provider_id/products/:product_id/repositories/:id/edit(.:format)          {:controller=>"repositories", :action=>"edit"}
+                provider_product_repository GET    /providers/:provider_id/products/:product_id/repositories/:id(.:format)               {:controller=>"repositories", :action=>"show"}
+                                            PUT    /providers/:provider_id/products/:product_id/repositories/:id(.:format)               {:controller=>"repositories", :action=>"update"}
+                                            DELETE /providers/:provider_id/products/:product_id/repositories/:id(.:format)               {:controller=>"repositories", :action=>"destroy"}
+                          provider_products GET    /providers/:provider_id/products(.:format)                                            {:controller=>"products", :action=>"index"}
+                                            POST   /providers/:provider_id/products(.:format)                                            {:controller=>"products", :action=>"create"}
+                       new_provider_product GET    /providers/:provider_id/products/new(.:format)                                        {:controller=>"products", :action=>"new"}
+                      edit_provider_product GET    /providers/:provider_id/products/:id/edit(.:format)                                   {:controller=>"products", :action=>"edit"}
+                           provider_product GET    /providers/:provider_id/products/:id(.:format)                                        {:controller=>"products", :action=>"show"}
+                                            PUT    /providers/:provider_id/products/:id(.:format)                                        {:controller=>"products", :action=>"update"}
+                                            DELETE /providers/:provider_id/products/:id(.:format)                                        {:controller=>"products", :action=>"destroy"}
+                            items_providers GET    /providers/items(.:format)                                                            {:controller=>"providers", :action=>"items"}
+                  redhat_provider_providers GET    /providers/redhat_provider(.:format)                                                  {:controller=>"providers", :action=>"redhat_provider"}
+                                            POST   /providers/redhat_provider(.:format)                                                  {:controller=>"providers", :action=>"update_redhat_provider"}
+                    products_repos_provider GET    /providers/:id/products_repos(.:format)                                               {:controller=>"providers", :action=>"products_repos"}
+                          schedule_provider GET    /providers/:id/schedule(.:format)                                                     {:controller=>"providers", :action=>"schedule"}
+                                  providers GET    /providers(.:format)                                                                  {:controller=>"providers", :action=>"index"}
+                                            POST   /providers(.:format)                                                                  {:controller=>"providers", :action=>"create"}
+                               new_provider GET    /providers/new(.:format)                                                              {:controller=>"providers", :action=>"new"}
+                              edit_provider GET    /providers/:id/edit(.:format)                                                         {:controller=>"providers", :action=>"edit"}
+                                   provider GET    /providers/:id(.:format)                                                              {:controller=>"providers", :action=>"show"}
+                                            PUT    /providers/:id(.:format)                                                              {:controller=>"providers", :action=>"update"}
+                                            DELETE /providers/:id(.:format)                                                              {:controller=>"providers", :action=>"destroy"}
+                                            PUT    /providers/:id(.:format)                                                              {:controller=>"providers", :action=>"update"}
+                                            POST   /providers/:id(.:format)                                                              {:controller=>"providers", :action=>"update"}
+                                 promotions GET    /promotions(.:format)                                                                 {:controller=>"promotions", :action=>"show"}
+                                  promotion GET    /promotions/:id(.:format)                                                             {:controller=>"promotions", :action=>"show"}
+                         products_promotion GET    /promotions/:id/products(.:format)                                                    {:controller=>"promotions", :action=>"products"}
+                         packages_promotion GET    /promotions/:id/packages(.:format)                                                    {:controller=>"promotions", :action=>"packages"}
+                           errata_promotion GET    /promotions/:id/errata(.:format)                                                      {:controller=>"promotions", :action=>"errata"}
+                 system_templates_promotion GET    /promotions/:id/system_templates(.:format)                                            {:controller=>"promotions", :action=>"system_templates"}
+                            repos_promotion GET    /promotions/:id/repos(.:format)                                                       {:controller=>"promotions", :action=>"repos"}
+                    distributions_promotion GET    /promotions/:id/distributions(.:format)                                               {:controller=>"promotions", :action=>"distributions"}
+                          details_promotion GET    /promotions/:id/details(.:format)                                                     {:controller=>"promotions", :action=>"details"}
+                                            PUT    /organizations/:org_id/environments/:env_id/edit(.:format)                            {:controller=>"environments", :action=>"update"}
+  system_templates_organization_environment GET    /organizations/:organization_id/environments/:id/system_templates(.:format)           {:controller=>"environments", :action=>"system_templates"}
+          products_organization_environment GET    /organizations/:organization_id/environments/:id/products(.:format)                   {:controller=>"environments", :action=>"products"}
+                  organization_environments GET    /organizations/:organization_id/environments(.:format)                                {:controller=>"environments", :action=>"index"}
+                                            POST   /organizations/:organization_id/environments(.:format)                                {:controller=>"environments", :action=>"create"}
+               new_organization_environment GET    /organizations/:organization_id/environments/new(.:format)                            {:controller=>"environments", :action=>"new"}
+              edit_organization_environment GET    /organizations/:organization_id/environments/:id/edit(.:format)                       {:controller=>"environments", :action=>"edit"}
+                   organization_environment GET    /organizations/:organization_id/environments/:id(.:format)                            {:controller=>"environments", :action=>"show"}
+                                            PUT    /organizations/:organization_id/environments/:id(.:format)                            {:controller=>"environments", :action=>"update"}
+                                            DELETE /organizations/:organization_id/environments/:id(.:format)                            {:controller=>"environments", :action=>"destroy"}
+auto_complete_search_organization_providers GET    /organizations/:organization_id/providers/auto_complete_search(.:format)              {:controller=>"providers", :action=>"auto_complete_search"}
+                     organization_providers GET    /organizations/:organization_id/providers(.:format)                                   {:controller=>"providers", :action=>"index"}
+                                            POST   /organizations/:organization_id/providers(.:format)                                   {:controller=>"providers", :action=>"create"}
+                  new_organization_provider GET    /organizations/:organization_id/providers/new(.:format)                               {:controller=>"providers", :action=>"new"}
+                 edit_organization_provider GET    /organizations/:organization_id/providers/:id/edit(.:format)                          {:controller=>"providers", :action=>"edit"}
+                      organization_provider GET    /organizations/:organization_id/providers/:id(.:format)                               {:controller=>"providers", :action=>"show"}
+                                            PUT    /organizations/:organization_id/providers/:id(.:format)                               {:controller=>"providers", :action=>"update"}
+                                            DELETE /organizations/:organization_id/providers/:id(.:format)                               {:controller=>"providers", :action=>"destroy"}
+                                            GET    /organizations/:organization_id/providers(.:format)                                   {:controller=>"providers", :action=>"index"}
+                                            POST   /organizations/:organization_id/providers(.:format)                                   {:controller=>"providers", :action=>"create"}
+                                            GET    /organizations/:organization_id/providers/new(.:format)                               {:controller=>"providers", :action=>"new"}
+                                            GET    /organizations/:organization_id/providers/:id/edit(.:format)                          {:controller=>"providers", :action=>"edit"}
+                                            GET    /organizations/:organization_id/providers/:id(.:format)                               {:controller=>"providers", :action=>"show"}
+                                            PUT    /organizations/:organization_id/providers/:id(.:format)                               {:controller=>"providers", :action=>"update"}
+                                            DELETE /organizations/:organization_id/providers/:id(.:format)                               {:controller=>"providers", :action=>"destroy"}
+         auto_complete_search_organizations GET    /organizations/auto_complete_search(.:format)                                         {:controller=>"organizations", :action=>"auto_complete_search"}
+                        items_organizations GET    /organizations/items(.:format)                                                        {:controller=>"organizations", :action=>"items"}
+                              organizations GET    /organizations(.:format)                                                              {:controller=>"organizations", :action=>"index"}
+                                            POST   /organizations(.:format)                                                              {:controller=>"organizations", :action=>"create"}
+                           new_organization GET    /organizations/new(.:format)                                                          {:controller=>"organizations", :action=>"new"}
+                          edit_organization GET    /organizations/:id/edit(.:format)                                                     {:controller=>"organizations", :action=>"edit"}
+                               organization GET    /organizations/:id(.:format)                                                          {:controller=>"organizations", :action=>"show"}
+                                            PUT    /organizations/:id(.:format)                                                          {:controller=>"organizations", :action=>"update"}
+                                            DELETE /organizations/:id(.:format)                                                          {:controller=>"organizations", :action=>"destroy"}
+                                            PUT    /organizations/:id/edit(.:format)                                                     {:controller=>"organizations", :action=>"update"}
+                             name_changeset PUT    /changesets/:id/name(.:format)                                                        {:controller=>"changesets", :action=>"name"}
+                     dependencies_changeset GET    /changesets/:id/dependencies(.:format)                                                {:controller=>"changesets", :action=>"dependencies"}
+                          promote_changeset POST   /changesets/:id/promote(.:format)                                                     {:controller=>"changesets", :action=>"promote"}
+                           object_changeset GET    /changesets/:id/object(.:format)                                                      {:controller=>"changesets", :action=>"object"}
+               promotion_progress_changeset GET    /changesets/:id/promotion_progress(.:format)                                          {:controller=>"changesets", :action=>"promotion_progress"}
+            auto_complete_search_changesets GET    /changesets/auto_complete_search(.:format)                                            {:controller=>"changesets", :action=>"auto_complete_search"}
+                            list_changesets GET    /changesets/list(.:format)                                                            {:controller=>"changesets", :action=>"list"}
+                           items_changesets GET    /changesets/items(.:format)                                                           {:controller=>"changesets", :action=>"items"}
+                                 changesets GET    /changesets(.:format)                                                                 {:controller=>"changesets", :action=>"index"}
+                                            POST   /changesets(.:format)                                                                 {:controller=>"changesets", :action=>"create"}
+                              new_changeset GET    /changesets/new(.:format)                                                             {:controller=>"changesets", :action=>"new"}
+                             edit_changeset GET    /changesets/:id/edit(.:format)                                                        {:controller=>"changesets", :action=>"edit"}
+                                  changeset GET    /changesets/:id(.:format)                                                             {:controller=>"changesets", :action=>"show"}
+                                            PUT    /changesets/:id(.:format)                                                             {:controller=>"changesets", :action=>"update"}
+                                            DELETE /changesets/:id(.:format)                                                             {:controller=>"changesets", :action=>"destroy"}
+                               environments GET    /environments(.:format)                                                               {:controller=>"environments", :action=>"index"}
+                                            POST   /environments(.:format)                                                               {:controller=>"environments", :action=>"create"}
+                            new_environment GET    /environments/new(.:format)                                                           {:controller=>"environments", :action=>"new"}
+                           edit_environment GET    /environments/:id/edit(.:format)                                                      {:controller=>"environments", :action=>"edit"}
+                                environment GET    /environments/:id(.:format)                                                           {:controller=>"environments", :action=>"show"}
+                                            PUT    /environments/:id(.:format)                                                           {:controller=>"environments", :action=>"update"}
+                                            DELETE /environments/:id(.:format)                                                           {:controller=>"environments", :action=>"destroy"}
+                      roles_show_permission GET    /roles/show_permission(.:format)                                                      {:controller=>"roles", :action=>"show_permission"}
+                     role_create_permission PUT    /roles/:role_id/create_permission(.:format)                                           {:controller=>"roles", :action=>"create_permission"}
+                    role_permission_destroy DELETE /roles/:role_id/permission/:permission_id/destroy_permission(.:format)                {:controller=>"roles", :action=>"destroy_permission"}
+                     role_permission_update POST   /roles/:role_id/permission/:permission_id/update_permission(.:format)                 {:controller=>"roles", :action=>"update_permission"}
+                 auto_complete_search_roles GET    /roles/auto_complete_search(.:format)                                                 {:controller=>"roles", :action=>"auto_complete_search"}
+                                items_roles GET    /roles/items(.:format)                                                                {:controller=>"roles", :action=>"items"}
+                                      roles GET    /roles(.:format)                                                                      {:controller=>"roles", :action=>"index"}
+                                            POST   /roles(.:format)                                                                      {:controller=>"roles", :action=>"create"}
+                                   new_role GET    /roles/new(.:format)                                                                  {:controller=>"roles", :action=>"new"}
+                                  edit_role GET    /roles/:id/edit(.:format)                                                             {:controller=>"roles", :action=>"edit"}
+                                       role GET    /roles/:id(.:format)                                                                  {:controller=>"roles", :action=>"show"}
+                                            PUT    /roles/:id(.:format)                                                                  {:controller=>"roles", :action=>"update"}
+                                            DELETE /roles/:id(.:format)                                                                  {:controller=>"roles", :action=>"destroy"}
+                           verbs_and_scopes GET    /roles/:organization_id/resource_type/verbs_and_scopes(.:format)                      {:controller=>"roles", :action=>"verbs_and_scopes"}
+                               search_index GET    /search(.:format)                                                                     {:controller=>"search", :action=>"show"}
+                       history_search_index GET    /search/history(.:format)                                                             {:controller=>"search", :action=>"history"}
+                                            DELETE /search/history(.:format)                                                             {:controller=>"search", :action=>"destroy_history"}
+                      favorite_search_index GET    /search/favorite(.:format)                                                            {:controller=>"search", :action=>"favorite"}
+                                            POST   /search/favorite(.:format)                                                            {:controller=>"search", :action=>"create_favorite"}
+              destroy_favorite_search_index DELETE /search/favorite/:id(.:format)                                                        {:controller=>"search", :action=>"destroy_favorite"}
+                       set_org_user_session POST   /user_session/set_org(.:format)                                                       {:controller=>"user_sessions", :action=>"set_org"}
+                  allowed_orgs_user_session GET    /user_session/allowed_orgs(.:format)                                                  {:controller=>"user_sessions", :action=>"allowed_orgs"}
+                               user_session POST   /user_session(.:format)                                                               {:controller=>"user_sessions", :action=>"create"}
+                           new_user_session GET    /user_session/new(.:format)                                                           {:controller=>"user_sessions", :action=>"new"}
+                          edit_user_session GET    /user_session/edit(.:format)                                                          {:controller=>"user_sessions", :action=>"edit"}
+                                            GET    /user_session(.:format)                                                               {:controller=>"user_sessions", :action=>"show"}
+                                            PUT    /user_session(.:format)                                                               {:controller=>"user_sessions", :action=>"update"}
+                                            DELETE /user_session(.:format)                                                               {:controller=>"user_sessions", :action=>"destroy"}
+                                            POST   /account(.:format)                                                                    {:controller=>"accounts", :action=>"create"}
+                                            GET    /account/new(.:format)                                                                {:controller=>"accounts", :action=>"new"}
+                                            GET    /account/edit(.:format)                                                               {:controller=>"accounts", :action=>"edit"}
+                                            GET    /account(.:format)                                                                    {:controller=>"accounts", :action=>"show"}
+                                            PUT    /account(.:format)                                                                    {:controller=>"accounts", :action=>"update"}
+                                            DELETE /account(.:format)                                                                    {:controller=>"accounts", :action=>"destroy"}
+                                       root        /(.:format)                                                                           {:controller=>"user_sessions", :action=>"new"}
+                                      login        /login(.:format)                                                                      {:controller=>"user_sessions", :action=>"new"}
+                                     logout POST   /logout(.:format)                                                                     {:controller=>"user_sessions", :action=>"destroy"}
+                        user_session_logout        /user_session/logout(.:format)                                                        {:controller=>"user_sessions", :action=>"destroy"}
+                          show_user_session GET    /user_session(.:format)                                                               {:controller=>"user_sessions", :action=>"show"}
+                                        api        /api(.:format)                                                                        {:controller=>"api/root", :action=>"resource_list"}
+                        packages_api_system GET    /api/systems/:id/packages(.:format)                                                   {:controller=>"api/systems", :action=>"package_profile"}
+                          errata_api_system GET    /api/systems/:id/errata(.:format)                                                     {:controller=>"api/systems", :action=>"errata"}
+                   api_system_subscriptions GET    /api/systems/:system_id/subscriptions(.:format)                                       {:controller=>"api/subscriptions", :action=>"index"}
+                                            POST   /api/systems/:system_id/subscriptions(.:format)                                       {:controller=>"api/subscriptions", :action=>"create"}
+                    api_system_subscription DELETE /api/systems/:system_id/subscriptions/:id(.:format)                                   {:controller=>"api/subscriptions", :action=>"destroy"}
+                                api_systems GET    /api/systems(.:format)                                                                {:controller=>"api/systems", :action=>"index"}
+                                            POST   /api/systems(.:format)                                                                {:controller=>"api/systems", :action=>"create"}
+                                 api_system GET    /api/systems/:id(.:format)                                                            {:controller=>"api/systems", :action=>"show"}
+                                            PUT    /api/systems/:id(.:format)                                                            {:controller=>"api/systems", :action=>"update"}
+                                            DELETE /api/systems/:id(.:format)                                                            {:controller=>"api/systems", :action=>"destroy"}
+                    api_provider_sync_index DELETE /api/providers/:provider_id/sync(.:format)                                            {:controller=>"api/sync", :action=>"cancel"}
+                                            GET    /api/providers/:provider_id/sync(.:format)                                            {:controller=>"api/sync", :action=>"index"}
+                                            POST   /api/providers/:provider_id/sync(.:format)                                            {:controller=>"api/sync", :action=>"create"}
+               import_products_api_provider POST   /api/providers/:id/import_products(.:format)                                          {:controller=>"api/providers", :action=>"import_products"}
+               import_manifest_api_provider POST   /api/providers/:id/import_manifest(.:format)                                          {:controller=>"api/providers", :action=>"import_manifest"}
+                product_create_api_provider POST   /api/providers/:id/product_create(.:format)                                           {:controller=>"api/providers", :action=>"product_create"}
+                      products_api_provider GET    /api/providers/:id/products(.:format)                                                 {:controller=>"api/providers", :action=>"products"}
+                              api_providers POST   /api/providers(.:format)                                                              {:controller=>"api/providers", :action=>"create"}
+                           new_api_provider GET    /api/providers/new(.:format)                                                          {:controller=>"api/providers", :action=>"new"}
+                          edit_api_provider GET    /api/providers/:id/edit(.:format)                                                     {:controller=>"api/providers", :action=>"edit"}
+                               api_provider GET    /api/providers/:id(.:format)                                                          {:controller=>"api/providers", :action=>"show"}
+                                            PUT    /api/providers/:id(.:format)                                                          {:controller=>"api/providers", :action=>"update"}
+                                            DELETE /api/providers/:id(.:format)                                                          {:controller=>"api/providers", :action=>"destroy"}
+                       import_api_templates POST   /api/templates/import(.:format)                                                       {:controller=>"api/templates", :action=>"import"}
+                        export_api_template GET    /api/templates/:id/export(.:format)                                                   {:controller=>"api/templates", :action=>"export"}
+                      api_template_products POST   /api/templates/:template_id/products(.:format)                                        {:controller=>"api/templates_content", :action=>"add_product"}
+                       api_template_product DELETE /api/templates/:template_id/products/:id(.:format)                                    {:controller=>"api/templates_content", :action=>"remove_product"}
+                                            GET    /api/templates/:template_id/products(.:format)                                        {:controller=>"api/templates_content", :action=>"index"}
+                                            POST   /api/templates/:template_id/products(.:format)                                        {:controller=>"api/templates_content", :action=>"create"}
+                   new_api_template_product GET    /api/templates/:template_id/products/new(.:format)                                    {:controller=>"api/templates_content", :action=>"new"}
+                  edit_api_template_product GET    /api/templates/:template_id/products/:id/edit(.:format)                               {:controller=>"api/templates_content", :action=>"edit"}
+                                            GET    /api/templates/:template_id/products/:id(.:format)                                    {:controller=>"api/templates_content", :action=>"show"}
+                                            PUT    /api/templates/:template_id/products/:id(.:format)                                    {:controller=>"api/templates_content", :action=>"update"}
+                                            DELETE /api/templates/:template_id/products/:id(.:format)                                    {:controller=>"api/templates_content", :action=>"destroy"}
+                      api_template_packages POST   /api/templates/:template_id/packages(.:format)                                        {:controller=>"api/templates_content", :action=>"add_package"}
+                       api_template_package DELETE /api/templates/:template_id/packages/:id(.:format)                                    {:controller=>"api/templates_content", :action=>"remove_package", :id=>/[0-9a-zA-Z\-_.]+/}
+                                            GET    /api/templates/:template_id/packages(.:format)                                        {:controller=>"api/templates_content", :action=>"index"}
+                                            POST   /api/templates/:template_id/packages(.:format)                                        {:controller=>"api/templates_content", :action=>"create"}
+                   new_api_template_package GET    /api/templates/:template_id/packages/new(.:format)                                    {:controller=>"api/templates_content", :action=>"new"}
+                  edit_api_template_package GET    /api/templates/:template_id/packages/:id/edit(.:format)                               {:controller=>"api/templates_content", :action=>"edit", :id=>/[0-9a-zA-Z\-_.]+/}
+                                            GET    /api/templates/:template_id/packages/:id(.:format)                                    {:controller=>"api/templates_content", :action=>"show", :id=>/[0-9a-zA-Z\-_.]+/}
+                                            PUT    /api/templates/:template_id/packages/:id(.:format)                                    {:controller=>"api/templates_content", :action=>"update", :id=>/[0-9a-zA-Z\-_.]+/}
+                                            DELETE /api/templates/:template_id/packages/:id(.:format)                                    {:controller=>"api/templates_content", :action=>"destroy", :id=>/[0-9a-zA-Z\-_.]+/}
+                    api_template_parameters POST   /api/templates/:template_id/parameters(.:format)                                      {:controller=>"api/templates_content", :action=>"add_parameter"}
+                     api_template_parameter DELETE /api/templates/:template_id/parameters/:id(.:format)                                  {:controller=>"api/templates_content", :action=>"remove_parameter"}
+                                            GET    /api/templates/:template_id/parameters(.:format)                                      {:controller=>"api/templates_content", :action=>"index"}
+                                            POST   /api/templates/:template_id/parameters(.:format)                                      {:controller=>"api/templates_content", :action=>"create"}
+                 new_api_template_parameter GET    /api/templates/:template_id/parameters/new(.:format)                                  {:controller=>"api/templates_content", :action=>"new"}
+                edit_api_template_parameter GET    /api/templates/:template_id/parameters/:id/edit(.:format)                             {:controller=>"api/templates_content", :action=>"edit"}
+                                            GET    /api/templates/:template_id/parameters/:id(.:format)                                  {:controller=>"api/templates_content", :action=>"show"}
+                                            PUT    /api/templates/:template_id/parameters/:id(.:format)                                  {:controller=>"api/templates_content", :action=>"update"}
+                                            DELETE /api/templates/:template_id/parameters/:id(.:format)                                  {:controller=>"api/templates_content", :action=>"destroy"}
+                api_template_package_groups POST   /api/templates/:template_id/package_groups(.:format)                                  {:controller=>"api/templates_content", :action=>"add_package_group"}
+                 api_template_package_group DELETE /api/templates/:template_id/package_groups/:id(.:format)                              {:controller=>"api/templates_content", :action=>"remove_package_group"}
+                                            GET    /api/templates/:template_id/package_groups(.:format)                                  {:controller=>"api/templates_content", :action=>"index"}
+                                            POST   /api/templates/:template_id/package_groups(.:format)                                  {:controller=>"api/templates_content", :action=>"create"}
+             new_api_template_package_group GET    /api/templates/:template_id/package_groups/new(.:format)                              {:controller=>"api/templates_content", :action=>"new"}
+            edit_api_template_package_group GET    /api/templates/:template_id/package_groups/:id/edit(.:format)                         {:controller=>"api/templates_content", :action=>"edit"}
+                                            GET    /api/templates/:template_id/package_groups/:id(.:format)                              {:controller=>"api/templates_content", :action=>"show"}
+                                            PUT    /api/templates/:template_id/package_groups/:id(.:format)                              {:controller=>"api/templates_content", :action=>"update"}
+                                            DELETE /api/templates/:template_id/package_groups/:id(.:format)                              {:controller=>"api/templates_content", :action=>"destroy"}
+      api_template_package_group_categories POST   /api/templates/:template_id/package_group_categories(.:format)                        {:controller=>"api/templates_content", :action=>"add_package_group_category"}
+        api_template_package_group_category DELETE /api/templates/:template_id/package_group_categories/:id(.:format)                    {:controller=>"api/templates_content", :action=>"remove_package_group_category"}
+                                            GET    /api/templates/:template_id/package_group_categories(.:format)                        {:controller=>"api/templates_content", :action=>"index"}
+                                            POST   /api/templates/:template_id/package_group_categories(.:format)                        {:controller=>"api/templates_content", :action=>"create"}
+    new_api_template_package_group_category GET    /api/templates/:template_id/package_group_categories/new(.:format)                    {:controller=>"api/templates_content", :action=>"new"}
+   edit_api_template_package_group_category GET    /api/templates/:template_id/package_group_categories/:id/edit(.:format)               {:controller=>"api/templates_content", :action=>"edit"}
+                                            GET    /api/templates/:template_id/package_group_categories/:id(.:format)                    {:controller=>"api/templates_content", :action=>"show"}
+                                            PUT    /api/templates/:template_id/package_group_categories/:id(.:format)                    {:controller=>"api/templates_content", :action=>"update"}
+                                            DELETE /api/templates/:template_id/package_group_categories/:id(.:format)                    {:controller=>"api/templates_content", :action=>"destroy"}
+                              api_templates GET    /api/templates(.:format)                                                              {:controller=>"api/templates", :action=>"index"}
+                                            POST   /api/templates(.:format)                                                              {:controller=>"api/templates", :action=>"create"}
+                           new_api_template GET    /api/templates/new(.:format)                                                          {:controller=>"api/templates", :action=>"new"}
+                          edit_api_template GET    /api/templates/:id/edit(.:format)                                                     {:controller=>"api/templates", :action=>"edit"}
+                               api_template GET    /api/templates/:id(.:format)                                                          {:controller=>"api/templates", :action=>"show"}
+                                            PUT    /api/templates/:id(.:format)                                                          {:controller=>"api/templates", :action=>"update"}
+                                            DELETE /api/templates/:id(.:format)                                                          {:controller=>"api/templates", :action=>"destroy"}
+      repositories_api_organization_product GET    /api/organizations/:organization_id/products/:id/repositories(.:format)               {:controller=>"api/products", :action=>"repositories"}
+                  api_organization_products GET    /api/organizations/:organization_id/products(.:format)                                {:controller=>"api/products", :action=>"index"}
+  repositories_api_organization_environment GET    /api/organizations/:organization_id/environments/:id/repositories(.:format)           {:controller=>"api/environments", :action=>"repositories"}
+    api_organization_environment_changesets GET    /api/organizations/:organization_id/environments/:environment_id/changesets(.:format) {:controller=>"api/changesets", :action=>"index"}
+                                            POST   /api/organizations/:organization_id/environments/:environment_id/changesets(.:format) {:controller=>"api/changesets", :action=>"create"}
+              api_organization_environments GET    /api/organizations/:organization_id/environments(.:format)                            {:controller=>"api/environments", :action=>"index"}
+                                            POST   /api/organizations/:organization_id/environments(.:format)                            {:controller=>"api/environments", :action=>"create"}
+           new_api_organization_environment GET    /api/organizations/:organization_id/environments/new(.:format)                        {:controller=>"api/environments", :action=>"new"}
+          edit_api_organization_environment GET    /api/organizations/:organization_id/environments/:id/edit(.:format)                   {:controller=>"api/environments", :action=>"edit"}
+               api_organization_environment GET    /api/organizations/:organization_id/environments/:id(.:format)                        {:controller=>"api/environments", :action=>"show"}
+                                            PUT    /api/organizations/:organization_id/environments/:id(.:format)                        {:controller=>"api/environments", :action=>"update"}
+                                            DELETE /api/organizations/:organization_id/environments/:id(.:format)                        {:controller=>"api/environments", :action=>"destroy"}
+                     api_organization_tasks GET    /api/organizations/:organization_id/tasks(.:format)                                   {:controller=>"api/tasks", :action=>"index"}
+                 api_organization_providers GET    /api/organizations/:organization_id/providers(.:format)                               {:controller=>"api/providers", :action=>"index"}
+                   api_organization_systems GET    /api/organizations/:organization_id/systems(.:format)                                 {:controller=>"api/systems", :action=>"index"}
+                                            POST   /api/organizations/:organization_id/systems(.:format)                                 {:controller=>"api/systems", :action=>"activate"}
+           api_organization_activation_keys GET    /api/organizations/:organization_id/activation_keys(.:format)                         {:controller=>"api/activation_keys", :action=>"index"}
+    discovery_api_organization_repositories POST   /api/organizations/:organization_id/repositories/discovery(.:format)                  {:controller=>"api/repositories", :action=>"discovery"}
+                 api_organization_uebercert POST   /api/organizations/:organization_id/uebercert(.:format)                               {:controller=>"api/uebercerts", :action=>"create"}
+                                            GET    /api/organizations/:organization_id/uebercert(.:format)                               {:controller=>"api/uebercerts", :action=>"show"}
+                   api_organization_filters GET    /api/organizations/:organization_id/filters(.:format)                                 {:controller=>"api/filters", :action=>"index"}
+                                            POST   /api/organizations/:organization_id/filters(.:format)                                 {:controller=>"api/filters", :action=>"create"}
+                    api_organization_filter GET    /api/organizations/:organization_id/filters/:id(.:format)                             {:controller=>"api/filters", :action=>"show"}
+                                            DELETE /api/organizations/:organization_id/filters/:id(.:format)                             {:controller=>"api/filters", :action=>"destroy"}
+                          api_organizations GET    /api/organizations(.:format)                                                          {:controller=>"api/organizations", :action=>"index"}
+                                            POST   /api/organizations(.:format)                                                          {:controller=>"api/organizations", :action=>"create"}
+                       new_api_organization GET    /api/organizations/new(.:format)                                                      {:controller=>"api/organizations", :action=>"new"}
+                      edit_api_organization GET    /api/organizations/:id/edit(.:format)                                                 {:controller=>"api/organizations", :action=>"edit"}
+                           api_organization GET    /api/organizations/:id(.:format)                                                      {:controller=>"api/organizations", :action=>"show"}
+                                            PUT    /api/organizations/:id(.:format)                                                      {:controller=>"api/organizations", :action=>"update"}
+                                            DELETE /api/organizations/:id(.:format)                                                      {:controller=>"api/organizations", :action=>"destroy"}
+                              api_changeset PUT    /api/changesets/:id(.:format)                                                         {:controller=>"api/changesets", :action=>"update_content"}
+                      promote_api_changeset POST   /api/changesets/:id/promote(.:format)                                                 {:controller=>"api/changesets", :action=>"promote"}
+                                            GET    /api/changesets/:id(.:format)                                                         {:controller=>"api/changesets", :action=>"show"}
+                                            DELETE /api/changesets/:id(.:format)                                                         {:controller=>"api/changesets", :action=>"destroy"}
+                   repositories_api_product GET    /api/products/:id/repositories(.:format)                                              {:controller=>"api/products", :action=>"repositories"}
+                     api_product_sync_index DELETE /api/products/:product_id/sync(.:format)                                              {:controller=>"api/sync", :action=>"cancel"}
+                                            GET    /api/products/:product_id/sync(.:format)                                              {:controller=>"api/sync", :action=>"index"}
+                                            POST   /api/products/:product_id/sync(.:format)                                              {:controller=>"api/sync", :action=>"create"}
+                                api_product GET    /api/products/:id(.:format)                                                           {:controller=>"api/products", :action=>"show"}
+                                            DELETE /api/products/:id(.:format)                                                           {:controller=>"api/products", :action=>"destroy"}
+                          api_puppetclasses GET    /api/puppetclasses(.:format)                                                          {:controller=>"api/puppetclasses", :action=>"index"}
+                             api_ping_index GET    /api/ping(.:format)                                                                   {:controller=>"api/ping", :action=>"index"}
+                  api_repository_sync_index DELETE /api/repositories/:repository_id/sync(.:format)                                       {:repository_id=>/[0-9a-zA-Z\-_.]*/, :controller=>"api/sync", :action=>"cancel"}
+                                            GET    /api/repositories/:repository_id/sync(.:format)                                       {:repository_id=>/[0-9a-zA-Z\-_.]*/, :controller=>"api/sync", :action=>"index"}
+                                            POST   /api/repositories/:repository_id/sync(.:format)                                       {:repository_id=>/[0-9a-zA-Z\-_.]*/, :controller=>"api/sync", :action=>"create"}
+                    api_repository_packages GET    /api/repositories/:repository_id/packages(.:format)                                   {:repository_id=>/[0-9a-zA-Z\-_.]*/, :controller=>"api/packages", :action=>"index"}
+                      api_repository_errata GET    /api/repositories/:repository_id/errata(.:format)                                     {:repository_id=>/[0-9a-zA-Z\-_.]*/, :controller=>"api/errata", :action=>"index"}
+               api_repository_distributions GET    /api/repositories/:repository_id/distributions(.:format)                              {:repository_id=>/[0-9a-zA-Z\-_.]*/, :controller=>"api/distributions", :action=>"index"}
+              package_groups_api_repository GET    /api/repositories/:id/package_groups(.:format)                                        {:controller=>"api/repositories", :action=>"package_groups", :id=>/[0-9a-zA-Z\-_.]*/}
+    package_group_categories_api_repository GET    /api/repositories/:id/package_group_categories(.:format)                              {:controller=>"api/repositories", :action=>"package_group_categories", :id=>/[0-9a-zA-Z\-_.]*/}
+                           api_repositories GET    /api/repositories(.:format)                                                           {:controller=>"api/repositories", :action=>"index"}
+                                            POST   /api/repositories(.:format)                                                           {:controller=>"api/repositories", :action=>"create"}
+                             api_repository GET    /api/repositories/:id(.:format)                                                       {:controller=>"api/repositories", :action=>"show", :id=>/[0-9a-zA-Z\-_.]*/}
+                                            DELETE /api/repositories/:id(.:format)                                                       {:controller=>"api/repositories", :action=>"destroy", :id=>/[0-9a-zA-Z\-_.]*/}
+                    api_environment_systems GET    /api/environments/:environment_id/systems(.:format)                                   {:controller=>"api/systems", :action=>"index"}
+                                            POST   /api/environments/:environment_id/systems(.:format)                                   {:controller=>"api/systems", :action=>"create"}
+       repositories_api_environment_product GET    /api/environments/:environment_id/products/:id/repositories(.:format)                 {:controller=>"api/products", :action=>"repositories"}
+                   api_environment_products GET    /api/environments/:environment_id/products(.:format)                                  {:controller=>"api/products", :action=>"index"}
+            api_environment_activation_keys GET    /api/environments/:environment_id/activation_keys(.:format)                           {:controller=>"api/activation_keys", :action=>"index"}
+                                            POST   /api/environments/:environment_id/activation_keys(.:format)                           {:controller=>"api/activation_keys", :action=>"create"}
+                  api_environment_templates GET    /api/environments/:environment_id/templates(.:format)                                 {:controller=>"api/templates", :action=>"index"}
+                            api_environment GET    /api/environments/:id(.:format)                                                       {:controller=>"api/environments", :action=>"show"}
+                                            PUT    /api/environments/:id(.:format)                                                       {:controller=>"api/environments", :action=>"update"}
+                                            DELETE /api/environments/:id(.:format)                                                       {:controller=>"api/environments", :action=>"destroy"}
+                         api_activation_key GET    /api/activation_keys/:id(.:format)                                                    {:controller=>"api/activation_keys", :action=>"show"}
+                                            PUT    /api/activation_keys/:id(.:format)                                                    {:controller=>"api/activation_keys", :action=>"update"}
+                                            DELETE /api/activation_keys/:id(.:format)                                                    {:controller=>"api/activation_keys", :action=>"destroy"}
+                                api_package GET    /api/packages/:id(.:format)                                                           {:controller=>"api/packages", :action=>"show"}
+                                api_erratum GET    /api/errata/:id(.:format)                                                             {:controller=>"api/errata", :action=>"show"}
+                           api_distribution GET    /api/distributions/:id(.:format)                                                      {:controller=>"api/distributions", :action=>"show"}
+                                  api_users GET    /api/users(.:format)                                                                  {:controller=>"api/users", :action=>"index"}
+                                            POST   /api/users(.:format)                                                                  {:controller=>"api/users", :action=>"create"}
+                               new_api_user GET    /api/users/new(.:format)                                                              {:controller=>"api/users", :action=>"new"}
+                              edit_api_user GET    /api/users/:id/edit(.:format)                                                         {:controller=>"api/users", :action=>"edit"}
+                                   api_user GET    /api/users/:id(.:format)                                                              {:controller=>"api/users", :action=>"show"}
+                                            PUT    /api/users/:id(.:format)                                                              {:controller=>"api/users", :action=>"update"}
+                                            DELETE /api/users/:id(.:format)                                                              {:controller=>"api/users", :action=>"destroy"}
+                                   api_task GET    /api/tasks/:id(.:format)                                                              {:controller=>"api/tasks", :action=>"show"}
+                                            POST   /api/katello/products/:id/repositories(.:format)                                      {:controller=>"api/products", :action=>"repo_create", :id=>/[0-9\.]*/}
+                              api_consumers POST   /api/consumers(.:format)                                                              {:controller=>"api/systems", :action=>"activate"}
+                                            GET    /api/consumers(.:format)                                                              {:controller=>"api/systems", :action=>"index"}
+                                            POST   /api/consumers(.:format)                                                              {:controller=>"api/systems", :action=>"create"}
+                           new_api_consumer GET    /api/consumers/new(.:format)                                                          {:controller=>"api/systems", :action=>"new"}
+                          edit_api_consumer GET    /api/consumers/:id/edit(.:format)                                                     {:controller=>"api/systems", :action=>"edit"}
+                               api_consumer GET    /api/consumers/:id(.:format)                                                          {:controller=>"api/systems", :action=>"show"}
+                                            PUT    /api/consumers/:id(.:format)                                                          {:controller=>"api/systems", :action=>"update"}
+                                            DELETE /api/consumers/:id(.:format)                                                          {:controller=>"api/systems", :action=>"destroy"}
+                                            GET    /api/owners/:organization_id/environments(.:format)                                   {:controller=>"api/environments", :action=>"index"}
+                                            GET    /api/owners/:organization_id/pools(.:format)                                          {:controller=>"api/candlepin_proxies", :action=>"get"}
+                                            GET    /api/environments/:environment_id/consumers(.:format)                                 {:controller=>"api/systems", :action=>"index"}
+                                            POST   /api/environments/:environment_id/consumers(.:format)                                 {:controller=>"api/systems", :action=>"create"}
+                                            POST   /api/consumers/:id(.:format)                                                          {:controller=>"api/systems", :action=>"regenerate_identity_certificates"}
+                                            GET    /api/users/:username/owners(.:format)                                                 {:controller=>"api/users", :action=>"list_owners"}
+                                            GET    /api/consumers/:id/certificates(.:format)                                             {:controller=>"api/candlepin_proxies", :action=>"get"}
+                                            GET    /api/consumers/:id/certificates/serials(.:format)                                     {:controller=>"api/candlepin_proxies", :action=>"get"}
+                                            GET    /api/consumers/:id/entitlements(.:format)                                             {:controller=>"api/candlepin_proxies", :action=>"get"}
+                                            POST   /api/consumers/:id/entitlements(.:format)                                             {:controller=>"api/candlepin_proxies", :action=>"post"}
+                                            DELETE /api/consumers/:id/entitlements(.:format)                                             {:controller=>"api/candlepin_proxies", :action=>"delete"}
+                                            GET    /api/consumers/:id/owner(.:format)                                                    {:controller=>"api/candlepin_proxies", :action=>"get"}
+                                            DELETE /api/consumers/:consumer_id/certificates/:id(.:format)                                {:controller=>"api/candlepin_proxies", :action=>"delete"}
+                                  api_pools GET    /api/pools(.:format)                                                                  {:controller=>"api/candlepin_proxies", :action=>"get"}
+                                            GET    /api/entitlements/:id(.:format)                                                       {:controller=>"api/candlepin_proxies", :action=>"get"}
+                          api_subscriptions POST   /api/subscriptions(.:format)                                                          {:controller=>"api/candlepin_proxies", :action=>"post"}
+                                            PUT    /api/consumers/:id/profile(.:format)                                                  {:controller=>"api/systems", :action=>"upload_package_profile"}
+                                            PUT    /api/consumers/:id/packages(.:format)                                                 {:controller=>"api/systems", :action=>"upload_package_profile"}
+                          api_status_memory GET    /api/status/memory(.:format)                                                          {:controller=>"api/status", :action=>"memory"}
+                                                   /*a                                                                                   {:controller=>"errors", :action=>"routing"}
+                                     jammit        /assets/:package.:extension(.:format)                                                 {:extension=>/.+/, :controller=>"jammit", :action=>"package"}
