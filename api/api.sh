@@ -1,6 +1,7 @@
 #!/bin/sh
 
-. ~/Scripts/katello/katello_config.sh
+SCRIPT_DIR="$( cd -P "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
+. $SCRIPT_DIR/../config.sh
 
 # Use curl to call the api
 # 1st param: hostname
@@ -9,7 +10,6 @@
 # 4th param: method (get, put, post, delete)
 # 5th param: data
 call-api() {
-
   h_name=$1; shift
   usr_psswd=$1; shift
   path=$1; shift
