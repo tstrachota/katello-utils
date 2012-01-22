@@ -1,0 +1,25 @@
+ABOUT:
+  Simple bash functions for calling katello api via curl.
+  Uses urls, usernames and passwords form a settings file.
+
+  api.sh        - api functions (kat-api, pulp-api, cp-api)
+  completion.sh - tab-completion scripts for the routes
+
+
+USAGE:
+  kat-api  <api route> <method> <data>
+  pulp-api <api route> <method> <data>
+  cp-api   <api route> <method> <data>
+
+  <method> - html method, optional, default is get
+  <data>   - json data to send, optional parameter, default is {}
+
+  Eg.
+  kat-api /organizations/ post '{name: New_Org_Name}'
+  kat-api /organizations/New_Org_Name
+
+
+REQUIREMENTS:
+  Reqires yajl library installed. It's used for reformatting
+  the json output.
+
