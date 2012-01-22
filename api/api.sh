@@ -45,7 +45,7 @@ call-api() {
 # 2nd param: method
 # 3rd param: data
 kat-api() {
-  call-api "$KAT_HOST/api/" "$KAT_USER:$KAT_PASSWORD" $@
+  call-api "$KAT_API_URL" "$KAT_USER:$KAT_PASSWORD" $@
 }
 
 # Call candlepin api
@@ -53,7 +53,7 @@ kat-api() {
 # 2nd param: method
 # 3rd param: data
 cp-api() {
-  call-api "$CP_HOST/candlepin" "$CP_USER:$CP_PASSWORD" $@
+  call-api "$CP_API_URL" "$CP_USER:$CP_PASSWORD" $@
 }
 
 # Call pulp api
@@ -61,6 +61,6 @@ cp-api() {
 # 2nd param: method
 # 3rd param: data
 pulp-api() {
-  call-api "$PULP_HOST/pulp/api/" "$PULP_USER:$PULP_PASSWORD" $@
+  call-api "$PULP_API_URL" "$PULP_USER:$PULP_PASSWORD" $@
 }
 
