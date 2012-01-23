@@ -11,7 +11,7 @@ USAGE:
   pulp-api <api route> <method> <data>
   cp-api   <api route> <method> <data>
 
-  <method> - html method, optional, default is get
+  <method> - http method, optional, default is get
   <data>   - json data to send, optional parameter, default is {}
 
   Eg.
