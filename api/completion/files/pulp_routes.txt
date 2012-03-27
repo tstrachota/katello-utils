@@ -2,11 +2,13 @@
 /events/
 /cds/ID/
 /cds/ID/history/ACTION_NAME/
-/consumers/applicable_errata_in_repos/
 /distributions/
 /distributions/ID/
-/jobs/
-/jobs/ID/
+/permissions/show/
+/permissions/user/grant/
+/permissions/user/revoke/
+/permissions/role/grant/
+/permissions/role/revoke/
 /repositories/
 /repositories/
 /repositories/
@@ -65,6 +67,12 @@
 /repositories/ID/ACTION_NAME/
 /repositories/schedules/
 /repositories/ID/history/ACTION_NAME/
+/roles/
+/roles/
+/roles/ID/
+/roles/ID/
+/roles/ID/add/
+/roles/ID/remove/
 /services/dependencies/
 /services/disassociate/packages/
 /enable_global_repo_credentials
@@ -72,6 +80,7 @@
 /services/discovery/repo/
 /services/export/repository/
 /services/export/repository_group/
+/statuses/repository/syncs/
 /tasks/
 /tasks/ID/
 /tasks/ID/
