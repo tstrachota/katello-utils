@@ -104,6 +104,7 @@
 /repositories/ID/enable
 /repositories/ID/errata
 /repositories/ID/errata/ID
+/repositories/ID/filters
 /repositories/ID/gpg_key_content
 /repositories/ID/package_group_categories
 /repositories/ID/package_groups
@@ -125,6 +126,7 @@
 /systems/ID/pools
 /systems/ID/subscriptions
 /systems/ID/subscriptions/ID
+/systems/ID/subscriptions/serials/ID
 /systems/tasks/ID
 /tasks/ID
 /templates
