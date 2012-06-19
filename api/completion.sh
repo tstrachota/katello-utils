@@ -18,7 +18,12 @@ function _pulpapi() {
   complete_api "$ROUTES_DIR/pulp_routes_modified.txt"  "$ROUTES_DIR/pulp_routes_bits.txt"
 }
 
+function _foremanapi() {
+  complete_api "$ROUTES_DIR/foreman_routes_modified.txt"  "$ROUTES_DIR/foreman_routes_bits.txt"
+}
+
 
 complete -F _katapi kat-api
 complete -F _cpapi cp-api
 complete -F _pulpapi pulp-api
+complete -F _foremanapi fm-api

@@ -101,3 +101,12 @@ pulp-api() {
   call-api "$PULP_API_URL" "$PULP_USER:$PULP_PASSWORD" $@
 }
 
+# Call pulp api
+# 1st param: relative path
+# 2nd param: method
+# 3rd param: data
+fm-api() {
+  call-api "$FOREMAN_API_URL" "admin:admin" $@
+}
+
+

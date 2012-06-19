@@ -1,11 +1,11 @@
 #!/bin/sh
 
-. ~/Scripts/katello/katello_config.sh
-
 SCRIPT_DIR="$( cd -P "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
 
+. $SCRIPT_DIR/../../config.sh
 
-controllers_path="$PULP_SRC_HOME/src/pulp/server/webservices/controllers"; 
+
+controllers_path="$PULP_SRC_HOME/server/webservices/controllers"; 
 
 #get paths from doc string of controllers
 echo "" > $SCRIPT_DIR/files/pulp_routes.txt

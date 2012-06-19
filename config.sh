@@ -1,15 +1,54 @@
 #!/bin/sh
 
+### Katello settings ###
+KAT_HOSTNAME=${KAT_HOSTNAME:-'localhost'}
+KAT_PREFIX=${KAT_PREFIX:-'katello'}
+KAT_PORT=${KAT_PORT:-'3000'}
 KAT_USER=${KAT_USER:-'admin'}
 KAT_PASSWORD=${KAT_PASSWORD:-'admin'}
-KAT_API_URL=${KAT_API_URL:-"https://localhost:3000/katello/api"}
+KAT_PROTOCOL=${KAT_PROTOCOL:-'https'}
 
+KAT_SRC_HOME=${KAT_SRC_HOME:-'/usr/share/katello/'}
+
+KAT_HOST="$KAT_PROTOCOL://$KAT_HOSTNAME:$KAT_PORT/$KAT_PREFIX"
+KAT_API_URL="$KAT_PROTOCOL://$KAT_HOSTNAME:$KAT_PORT/$KAT_PREFIX/api"
+
+
+### Candlepin settings ###
+CP_HOSTNAME=${CP_HOSTNAME:-'localhost'}
+CP_PREFIX=${CP_PREFIX:-'candlepin'}
+CP_PORT=${CP_PORT:-'8443'}
 CP_USER=${CP_USER:-'admin'}
 CP_PASSWORD=${CP_PASSWORD:-'admin'}
-CP_API_URL=${CP_API_URL:-'https://localhost:8443/candlepin'}
 CP_OAUTH_KEY=${CP_OAUTH_KEY:-'katello'}
 CP_OAUTH_SECRET=${CP_OAUTH_SECRET:-'your_oauth_secret'}
 
+CP_API_URL=${CP_API_URL:-"https://$CP_HOSTNAME:$CP_PORT/$CP_PREFIX"}
+
+
+### Pulp settings ###
+PULP_HOSTNAME=${PULP_HOSTNAME:-'localhost'}
+PULP_PREFIX=${PULP_PREFIX:-'pulp'}
+PULP_PORT=${PULP_PORT:-'443'}
 PULP_USER=${PULP_USER:-'admin'}
 PULP_PASSWORD=${PULP_PASSWORD:-'admin'}
-PULP_API_URL=${PULP_API_URL:-'https://localhost/pulp/api'}
+PULP_PROTOCOL=${PULP_PROTOCOL:-'https'}
+
+PULP_API_URL=${PULP_API_URL:-"$PULP_PROTOCOL://$PULP_HOSTNAME:$PULP_PORT/$PULP_PREFIX/api"}
+
+PULP_SRC_HOME=${PULP_SRC_HOME:-'/usr/lib/python2.7/site-packages/pulp'}
+
+
+### Foreman settings ###
+FOREMAN_HOSTNAME=${FOREMAN_HOSTNAME:-'localhost'}
+FOREMAN_PREFIX=${FOREMAN_PREFIX:-'pulp'}
+FOREMAN_PORT=${FOREMAN_PORT:-'443'}
+FOREMAN_USER=${FOREMAN_USER:-'admin'}
+FOREMAN_PASSWORD=${FOREMAN_PASSWORD:-'admin'}
+FOREMNA_PROTOCOL=${FOREMAN_PROTOCOL:-'https'}
+
+FOREMAN_API_URL=${FOREMAN_API_URL:-"$FOREMAN_PROTOCOL://$FOREMAN_HOSTNAME:$FOREMAN_PORT/$FOREMAN_PREFIX/api"}
+
+FOREMAN_SRC_HOME=${FOREMAN_SRC_HOME:-"/usr/share/foreman/"}
+
+

@@ -1,0 +1,272 @@
+                                                  /node/:name(.:format)                                             {:controller=>"hosts", :name=>/[^\.][\w\.-]+/, :action=>"externalNodes"}
+                            reports_create POST   /reports/create(.:format)                                         {:controller=>"reports", :action=>"create"}
+                        fact_values_create POST   /fact_values/create(.:format)                                     {:controller=>"fact_values", :action=>"create"}
+              auto_complete_search_reports GET    /reports/auto_complete_search(.:format)                           {:controller=>"reports", :action=>"auto_complete_search"}
+                                   reports GET    /reports(.:format)                                                {:controller=>"reports", :action=>"index"}
+                                           POST   /reports(.:format)                                                {:controller=>"reports", :action=>"create"}
+                                    report GET    /reports/:id(.:format)                                            {:controller=>"reports", :action=>"show"}
+                                           DELETE /reports/:id(.:format)                                            {:controller=>"reports", :action=>"destroy"}
+                                      help        (/:controller)/help(.:format)                                     {:action=>"welcome"}
+                                clone_host GET    /hosts/:id/clone(.:format)                                        {:controller=>"hosts", :id=>/[^\/]+/, :action=>"clone"}
+                  storeconfig_klasses_host GET    /hosts/:id/storeconfig_klasses(.:format)                          {:controller=>"hosts", :id=>/[^\/]+/, :action=>"storeconfig_klasses"}
+                        externalNodes_host GET    /hosts/:id/externalNodes(.:format)                                {:controller=>"hosts", :id=>/[^\/]+/, :action=>"externalNodes"}
+                             setBuild_host GET    /hosts/:id/setBuild(.:format)                                     {:controller=>"hosts", :id=>/[^\/]+/, :action=>"setBuild"}
+                          cancelBuild_host GET    /hosts/:id/cancelBuild(.:format)                                  {:controller=>"hosts", :id=>/[^\/]+/, :action=>"cancelBuild"}
+                            puppetrun_host GET    /hosts/:id/puppetrun(.:format)                                    {:controller=>"hosts", :id=>/[^\/]+/, :action=>"puppetrun"}
+                           pxe_config_host GET    /hosts/:id/pxe_config(.:format)                                   {:controller=>"hosts", :id=>/[^\/]+/, :action=>"pxe_config"}
+                        toggle_manage_host PUT    /hosts/:id/toggle_manage(.:format)                                {:controller=>"hosts", :id=>/[^\/]+/, :action=>"toggle_manage"}
+                 environment_selected_host POST   /hosts/:id/environment_selected(.:format)                         {:controller=>"hosts", :id=>/[^\/]+/, :action=>"environment_selected"}
+                                power_host PUT    /hosts/:id/power(.:format)                                        {:controller=>"hosts", :id=>/[^\/]+/, :action=>"power"}
+                              console_host GET    /hosts/:id/console(.:format)                                      {:controller=>"hosts", :id=>/[^\/]+/, :action=>"console"}
+                         show_search_hosts GET    /hosts/show_search(.:format)                                      {:controller=>"hosts", :action=>"show_search"}
+                    multiple_actions_hosts GET    /hosts/multiple_actions(.:format)                                 {:controller=>"hosts", :action=>"multiple_actions"}
+                 multiple_parameters_hosts GET    /hosts/multiple_parameters(.:format)                              {:controller=>"hosts", :action=>"multiple_parameters"}
+          update_multiple_parameters_hosts POST   /hosts/update_multiple_parameters(.:format)                       {:controller=>"hosts", :action=>"update_multiple_parameters"}
+           select_multiple_hostgroup_hosts GET    /hosts/select_multiple_hostgroup(.:format)                        {:controller=>"hosts", :action=>"select_multiple_hostgroup"}
+           update_multiple_hostgroup_hosts POST   /hosts/update_multiple_hostgroup(.:format)                        {:controller=>"hosts", :action=>"update_multiple_hostgroup"}
+         select_multiple_environment_hosts GET    /hosts/select_multiple_environment(.:format)                      {:controller=>"hosts", :action=>"select_multiple_environment"}
+         update_multiple_environment_hosts POST   /hosts/update_multiple_environment(.:format)                      {:controller=>"hosts", :action=>"update_multiple_environment"}
+                  multiple_puppetrun_hosts GET    /hosts/multiple_puppetrun(.:format)                               {:controller=>"hosts", :action=>"multiple_puppetrun"}
+           update_multiple_puppetrun_hosts POST   /hosts/update_multiple_puppetrun(.:format)                        {:controller=>"hosts", :action=>"update_multiple_puppetrun"}
+                    multiple_destroy_hosts GET    /hosts/multiple_destroy(.:format)                                 {:controller=>"hosts", :action=>"multiple_destroy"}
+             submit_multiple_destroy_hosts POST   /hosts/submit_multiple_destroy(.:format)                          {:controller=>"hosts", :action=>"submit_multiple_destroy"}
+                      multiple_build_hosts GET    /hosts/multiple_build(.:format)                                   {:controller=>"hosts", :action=>"multiple_build"}
+               submit_multiple_build_hosts POST   /hosts/submit_multiple_build(.:format)                            {:controller=>"hosts", :action=>"submit_multiple_build"}
+                      reset_multiple_hosts GET    /hosts/reset_multiple(.:format)                                   {:controller=>"hosts", :action=>"reset_multiple"}
+                    multiple_disable_hosts GET    /hosts/multiple_disable(.:format)                                 {:controller=>"hosts", :action=>"multiple_disable"}
+             submit_multiple_disable_hosts POST   /hosts/submit_multiple_disable(.:format)                          {:controller=>"hosts", :action=>"submit_multiple_disable"}
+                     multiple_enable_hosts GET    /hosts/multiple_enable(.:format)                                  {:controller=>"hosts", :action=>"multiple_enable"}
+              submit_multiple_enable_hosts POST   /hosts/submit_multiple_enable(.:format)                           {:controller=>"hosts", :action=>"submit_multiple_enable"}
+                auto_complete_search_hosts GET    /hosts/auto_complete_search(.:format)                             {:controller=>"hosts", :action=>"auto_complete_search"}
+                       template_used_hosts GET    /hosts/template_used(.:format)                                    {:controller=>"hosts", :action=>"template_used"}
+                              active_hosts GET    /hosts/active(.:format)                                           {:controller=>"hosts", :action=>"active"}
+                             pending_hosts GET    /hosts/pending(.:format)                                          {:controller=>"hosts", :action=>"pending"}
+                         out_of_sync_hosts GET    /hosts/out_of_sync(.:format)                                      {:controller=>"hosts", :action=>"out_of_sync"}
+                              errors_hosts GET    /hosts/errors(.:format)                                           {:controller=>"hosts", :action=>"errors"}
+                            disabled_hosts GET    /hosts/disabled(.:format)                                         {:controller=>"hosts", :action=>"disabled"}
+                   process_hostgroup_hosts POST   /hosts/process_hostgroup(.:format)                                {:controller=>"hosts", :action=>"process_hostgroup"}
+   hostgroup_or_environment_selected_hosts POST   /hosts/hostgroup_or_environment_selected(.:format)                {:controller=>"hosts", :action=>"hostgroup_or_environment_selected"}
+                 hypervisor_selected_hosts POST   /hosts/hypervisor_selected(.:format)                              {:controller=>"hosts", :action=>"hypervisor_selected"}
+               architecture_selected_hosts POST   /hosts/architecture_selected(.:format)                            {:controller=>"hosts", :action=>"architecture_selected"}
+                         os_selected_hosts POST   /hosts/os_selected(.:format)                                      {:controller=>"hosts", :action=>"os_selected"}
+                     domain_selected_hosts POST   /hosts/domain_selected(.:format)                                  {:controller=>"hosts", :action=>"domain_selected"}
+                  use_image_selected_hosts POST   /hosts/use_image_selected(.:format)                               {:controller=>"hosts", :action=>"use_image_selected"}
+           compute_resource_selected_hosts POST   /hosts/compute_resource_selected(.:format)                        {:controller=>"hosts", :action=>"compute_resource_selected"}
+                     medium_selected_hosts POST   /hosts/medium_selected(.:format)                                  {:controller=>"hosts", :action=>"medium_selected"}
+                              host_reports GET    /hosts/:host_id/reports(.:format)                                 {:controller=>"reports", :host_id=>/[^\/]+/, :action=>"index"}
+                               host_report GET    /hosts/:host_id/reports/:id(.:format)                             {:controller=>"reports", :host_id=>/[^\/]+/, :id=>/[^\/]+/, :action=>"show"}
+                                host_facts GET    /hosts/:host_id/facts(.:format)                                   {:controller=>"fact_values", :host_id=>/[^\/]+/, :action=>"index"}
+                        host_puppetclasses GET    /hosts/:host_id/puppetclasses(.:format)                           {:controller=>"puppetclasses", :host_id=>/[^\/]+/, :action=>"index"}
+                           host_lookup_key GET    /hosts/:host_id/lookup_keys/:id(.:format)                         {:controller=>"lookup_keys", :host_id=>/[^\/]+/, :id=>/[^\/]+/, :action=>"show"}
+                                     hosts GET    /hosts(.:format)                                                  {:controller=>"hosts", :action=>"index"}
+                                           POST   /hosts(.:format)                                                  {:controller=>"hosts", :action=>"create"}
+                                  new_host GET    /hosts/new(.:format)                                              {:controller=>"hosts", :action=>"new"}
+                                 edit_host GET    /hosts/:id/edit(.:format)                                         {:controller=>"hosts", :id=>/[^\/]+/, :action=>"edit"}
+                                      host GET    /hosts/:id(.:format)                                              {:controller=>"hosts", :id=>/[^\/]+/, :action=>"show"}
+                                           PUT    /hosts/:id(.:format)                                              {:controller=>"hosts", :id=>/[^\/]+/, :action=>"update"}
+                                           DELETE /hosts/:id(.:format)                                              {:controller=>"hosts", :id=>/[^\/]+/, :action=>"destroy"}
+                                 bookmarks GET    /bookmarks(.:format)                                              {:controller=>"bookmarks", :action=>"index"}
+                                           POST   /bookmarks(.:format)                                              {:controller=>"bookmarks", :action=>"create"}
+                              new_bookmark GET    /bookmarks/new(.:format)                                          {:controller=>"bookmarks", :action=>"new"}
+                             edit_bookmark GET    /bookmarks/:id/edit(.:format)                                     {:controller=>"bookmarks", :id=>/[^\/]+/, :action=>"edit"}
+                                  bookmark PUT    /bookmarks/:id(.:format)                                          {:controller=>"bookmarks", :id=>/[^\/]+/, :action=>"update"}
+                                           DELETE /bookmarks/:id(.:format)                                          {:controller=>"bookmarks", :id=>/[^\/]+/, :action=>"destroy"}
+                  lookup_key_lookup_values GET    /lookup_keys/:lookup_key_id/lookup_values(.:format)               {:controller=>"lookup_values", :lookup_key_id=>/[^\/]+/, :action=>"index"}
+                                           POST   /lookup_keys/:lookup_key_id/lookup_values(.:format)               {:controller=>"lookup_values", :lookup_key_id=>/[^\/]+/, :action=>"create"}
+                   lookup_key_lookup_value PUT    /lookup_keys/:lookup_key_id/lookup_values/:id(.:format)           {:controller=>"lookup_values", :lookup_key_id=>/[^\/]+/, :id=>/[^\/]+/, :action=>"update"}
+                                           DELETE /lookup_keys/:lookup_key_id/lookup_values/:id(.:format)           {:controller=>"lookup_values", :lookup_key_id=>/[^\/]+/, :id=>/[^\/]+/, :action=>"destroy"}
+                               lookup_keys GET    /lookup_keys(.:format)                                            {:controller=>"lookup_keys", :action=>"index"}
+                           edit_lookup_key GET    /lookup_keys/:id/edit(.:format)                                   {:controller=>"lookup_keys", :id=>/[^\/]+/, :action=>"edit"}
+                                lookup_key GET    /lookup_keys/:id(.:format)                                        {:controller=>"lookup_keys", :id=>/[^\/]+/, :action=>"show"}
+                                           PUT    /lookup_keys/:id(.:format)                                        {:controller=>"lookup_keys", :id=>/[^\/]+/, :action=>"update"}
+                                           DELETE /lookup_keys/:id(.:format)                                        {:controller=>"lookup_keys", :id=>/[^\/]+/, :action=>"destroy"}
+                     fact_host_fact_values GET    /facts/:fact_id/values(.:format)                                  {:fact_id=>/[^\/]+/, :controller=>"fact_values", :action=>"index"}
+                                     facts GET    /facts(.:format)                                                  {:controller=>"facts", :action=>"index"}
+                                      fact GET    /facts/:id(.:format)                                              {:controller=>"facts", :id=>/[^\/]+/, :action=>"show"}
+             auto_complete_search_settings GET    /settings/auto_complete_search(.:format)                          {:controller=>"settings", :action=>"auto_complete_search"}
+                                  settings GET    /settings(.:format)                                               {:controller=>"settings", :action=>"index"}
+                                   setting PUT    /settings/:id(.:format)                                           {:controller=>"settings", :action=>"update"}
+    auto_complete_search_common_parameters GET    /common_parameters/auto_complete_search(.:format)                 {:controller=>"common_parameters", :action=>"auto_complete_search"}
+                         common_parameters GET    /common_parameters(.:format)                                      {:controller=>"common_parameters", :action=>"index"}
+                                           POST   /common_parameters(.:format)                                      {:controller=>"common_parameters", :action=>"create"}
+                      new_common_parameter GET    /common_parameters/new(.:format)                                  {:controller=>"common_parameters", :action=>"new"}
+                     edit_common_parameter GET    /common_parameters/:id/edit(.:format)                             {:controller=>"common_parameters", :action=>"edit"}
+                          common_parameter GET    /common_parameters/:id(.:format)                                  {:controller=>"common_parameters", :action=>"show"}
+                                           PUT    /common_parameters/:id(.:format)                                  {:controller=>"common_parameters", :action=>"update"}
+                                           DELETE /common_parameters/:id(.:format)                                  {:controller=>"common_parameters", :action=>"destroy"}
+          import_environments_environments GET    /environments/import_environments(.:format)                       {:controller=>"environments", :action=>"import_environments"}
+             obsolete_and_new_environments POST   /environments/obsolete_and_new(.:format)                          {:controller=>"environments", :action=>"obsolete_and_new"}
+         auto_complete_search_environments GET    /environments/auto_complete_search(.:format)                      {:controller=>"environments", :action=>"auto_complete_search"}
+                              environments GET    /environments(.:format)                                           {:controller=>"environments", :action=>"index"}
+                                           POST   /environments(.:format)                                           {:controller=>"environments", :action=>"create"}
+                           new_environment GET    /environments/new(.:format)                                       {:controller=>"environments", :action=>"new"}
+                          edit_environment GET    /environments/:id/edit(.:format)                                  {:controller=>"environments", :action=>"edit"}
+                               environment GET    /environments/:id(.:format)                                       {:controller=>"environments", :action=>"show"}
+                                           PUT    /environments/:id(.:format)                                       {:controller=>"environments", :action=>"update"}
+                                           DELETE /environments/:id(.:format)                                       {:controller=>"environments", :action=>"destroy"}
+                            nest_hostgroup GET    /hostgroups/:id/nest(.:format)                                    {:controller=>"hostgroups", :action=>"nest"}
+                           clone_hostgroup GET    /hostgroups/:id/clone(.:format)                                   {:controller=>"hostgroups", :action=>"clone"}
+           auto_complete_search_hostgroups GET    /hostgroups/auto_complete_search(.:format)                        {:controller=>"hostgroups", :action=>"auto_complete_search"}
+           environment_selected_hostgroups POST   /hostgroups/environment_selected(.:format)                        {:controller=>"hostgroups", :action=>"environment_selected"}
+            hypervisor_selected_hostgroups POST   /hostgroups/hypervisor_selected(.:format)                         {:controller=>"hostgroups", :action=>"hypervisor_selected"}
+          architecture_selected_hostgroups POST   /hostgroups/architecture_selected(.:format)                       {:controller=>"hostgroups", :action=>"architecture_selected"}
+                    os_selected_hostgroups POST   /hostgroups/os_selected(.:format)                                 {:controller=>"hostgroups", :action=>"os_selected"}
+                domain_selected_hostgroups POST   /hostgroups/domain_selected(.:format)                             {:controller=>"hostgroups", :action=>"domain_selected"}
+             use_image_selected_hostgroups POST   /hostgroups/use_image_selected(.:format)                          {:controller=>"hostgroups", :action=>"use_image_selected"}
+                medium_selected_hostgroups POST   /hostgroups/medium_selected(.:format)                             {:controller=>"hostgroups", :action=>"medium_selected"}
+                                hostgroups GET    /hostgroups(.:format)                                             {:controller=>"hostgroups", :action=>"index"}
+                                           POST   /hostgroups(.:format)                                             {:controller=>"hostgroups", :action=>"create"}
+                             new_hostgroup GET    /hostgroups/new(.:format)                                         {:controller=>"hostgroups", :action=>"new"}
+                            edit_hostgroup GET    /hostgroups/:id/edit(.:format)                                    {:controller=>"hostgroups", :action=>"edit"}
+                                 hostgroup GET    /hostgroups/:id(.:format)                                         {:controller=>"hostgroups", :action=>"show"}
+                                           PUT    /hostgroups/:id(.:format)                                         {:controller=>"hostgroups", :action=>"update"}
+                                           DELETE /hostgroups/:id(.:format)                                         {:controller=>"hostgroups", :action=>"destroy"}
+         import_environments_puppetclasses GET    /puppetclasses/import_environments(.:format)                      {:controller=>"puppetclasses", :action=>"import_environments"}
+            obsolete_and_new_puppetclasses POST   /puppetclasses/obsolete_and_new(.:format)                         {:controller=>"puppetclasses", :action=>"obsolete_and_new"}
+        auto_complete_search_puppetclasses GET    /puppetclasses/auto_complete_search(.:format)                     {:controller=>"puppetclasses", :action=>"auto_complete_search"}
+                         puppetclass_hosts GET    /puppetclasses/:puppetclass_id/hosts(.:format)                    {:controller=>"hosts", :puppetclass_id=>/[^\/]+/, :action=>"index"}
+                                           POST   /puppetclasses/:puppetclass_id/hosts(.:format)                    {:controller=>"hosts", :puppetclass_id=>/[^\/]+/, :action=>"create"}
+                      new_puppetclass_host GET    /puppetclasses/:puppetclass_id/hosts/new(.:format)                {:controller=>"hosts", :puppetclass_id=>/[^\/]+/, :action=>"new"}
+                     edit_puppetclass_host GET    /puppetclasses/:puppetclass_id/hosts/:id/edit(.:format)           {:controller=>"hosts", :puppetclass_id=>/[^\/]+/, :id=>/[^\/]+/, :action=>"edit"}
+                          puppetclass_host GET    /puppetclasses/:puppetclass_id/hosts/:id(.:format)                {:controller=>"hosts", :puppetclass_id=>/[^\/]+/, :id=>/[^\/]+/, :action=>"show"}
+                                           PUT    /puppetclasses/:puppetclass_id/hosts/:id(.:format)                {:controller=>"hosts", :puppetclass_id=>/[^\/]+/, :id=>/[^\/]+/, :action=>"update"}
+                                           DELETE /puppetclasses/:puppetclass_id/hosts/:id(.:format)                {:controller=>"hosts", :puppetclass_id=>/[^\/]+/, :id=>/[^\/]+/, :action=>"destroy"}
+                   puppetclass_lookup_keys GET    /puppetclasses/:puppetclass_id/lookup_keys(.:format)              {:controller=>"lookup_keys", :puppetclass_id=>/[^\/]+/, :action=>"index"}
+               edit_puppetclass_lookup_key GET    /puppetclasses/:puppetclass_id/lookup_keys/:id/edit(.:format)     {:controller=>"lookup_keys", :puppetclass_id=>/[^\/]+/, :id=>/[^\/]+/, :action=>"edit"}
+                    puppetclass_lookup_key PUT    /puppetclasses/:puppetclass_id/lookup_keys/:id(.:format)          {:controller=>"lookup_keys", :puppetclass_id=>/[^\/]+/, :id=>/[^\/]+/, :action=>"update"}
+                                           DELETE /puppetclasses/:puppetclass_id/lookup_keys/:id(.:format)          {:controller=>"lookup_keys", :puppetclass_id=>/[^\/]+/, :id=>/[^\/]+/, :action=>"destroy"}
+                             puppetclasses GET    /puppetclasses(.:format)                                          {:controller=>"puppetclasses", :action=>"index"}
+                                           POST   /puppetclasses(.:format)                                          {:controller=>"puppetclasses", :action=>"create"}
+                           new_puppetclass GET    /puppetclasses/new(.:format)                                      {:controller=>"puppetclasses", :action=>"new"}
+                          edit_puppetclass GET    /puppetclasses/:id/edit(.:format)                                 {:controller=>"puppetclasses", :action=>"edit"}
+                               puppetclass GET    /puppetclasses/:id(.:format)                                      {:controller=>"puppetclasses", :action=>"show"}
+                                           PUT    /puppetclasses/:id(.:format)                                      {:controller=>"puppetclasses", :action=>"update"}
+                                           DELETE /puppetclasses/:id(.:format)                                      {:controller=>"puppetclasses", :action=>"destroy"}
+                smart_proxy_puppetca_index GET    /smart_proxies/:smart_proxy_id/puppetca(.:format)                 {:smart_proxy_id=>/[^\/]+/, :controller=>"SmartProxies::Puppetca", :action=>"index"}
+                      smart_proxy_puppetca PUT    /smart_proxies/:smart_proxy_id/puppetca/:id(.:format)             {:smart_proxy_id=>/[^\/]+/, :controller=>"SmartProxies::Puppetca", :id=>/[^\/]+/, :action=>"update"}
+                                           DELETE /smart_proxies/:smart_proxy_id/puppetca/:id(.:format)             {:smart_proxy_id=>/[^\/]+/, :controller=>"SmartProxies::Puppetca", :id=>/[^\/]+/, :action=>"destroy"}
+                smart_proxy_autosign_index GET    /smart_proxies/:smart_proxy_id/autosign(.:format)                 {:smart_proxy_id=>/[^\/]+/, :controller=>"SmartProxies::Autosign", :action=>"index"}
+                                           POST   /smart_proxies/:smart_proxy_id/autosign(.:format)                 {:smart_proxy_id=>/[^\/]+/, :controller=>"SmartProxies::Autosign", :action=>"create"}
+                  new_smart_proxy_autosign GET    /smart_proxies/:smart_proxy_id/autosign/new(.:format)             {:smart_proxy_id=>/[^\/]+/, :controller=>"SmartProxies::Autosign", :action=>"new"}
+                      smart_proxy_autosign DELETE /smart_proxies/:smart_proxy_id/autosign/:id(.:format)             {:smart_proxy_id=>/[^\/]+/, :controller=>"SmartProxies::Autosign", :id=>/[^\/]+/, :action=>"destroy"}
+                             smart_proxies GET    /smart_proxies(.:format)                                          {:controller=>"smart_proxies", :action=>"index"}
+                                           POST   /smart_proxies(.:format)                                          {:controller=>"smart_proxies", :action=>"create"}
+                           new_smart_proxy GET    /smart_proxies/new(.:format)                                      {:controller=>"smart_proxies", :action=>"new"}
+                          edit_smart_proxy GET    /smart_proxies/:id/edit(.:format)                                 {:controller=>"smart_proxies", :action=>"edit"}
+                               smart_proxy PUT    /smart_proxies/:id(.:format)                                      {:controller=>"smart_proxies", :action=>"update"}
+                                           DELETE /smart_proxies/:id(.:format)                                      {:controller=>"smart_proxies", :action=>"destroy"}
+          auto_complete_search_fact_values GET    /fact_values/auto_complete_search(.:format)                       {:controller=>"fact_values", :action=>"auto_complete_search"}
+                               fact_values GET    /fact_values(.:format)                                            {:controller=>"fact_values", :action=>"index"}
+                                    notice DELETE /notices/:id(.:format)                                            {:controller=>"notices", :action=>"destroy"}
+               auto_complete_search_audits GET    /audits/auto_complete_search(.:format)                            {:controller=>"audits", :action=>"auto_complete_search"}
+                                    audits GET    /audits(.:format)                                                 {:controller=>"audits", :action=>"index"}
+                                           POST   /audits(.:format)                                                 {:controller=>"audits", :action=>"create"}
+                                 new_audit GET    /audits/new(.:format)                                             {:controller=>"audits", :action=>"new"}
+                                edit_audit GET    /audits/:id/edit(.:format)                                        {:controller=>"audits", :action=>"edit"}
+                                     audit GET    /audits/:id(.:format)                                             {:controller=>"audits", :action=>"show"}
+                                           PUT    /audits/:id(.:format)                                             {:controller=>"audits", :action=>"update"}
+                                           DELETE /audits/:id(.:format)                                             {:controller=>"audits", :action=>"destroy"}
+              auto_complete_search_domains GET    /domains/auto_complete_search(.:format)                           {:controller=>"domains", :action=>"auto_complete_search"}
+                                   domains GET    /domains(.:format)                                                {:controller=>"domains", :action=>"index"}
+                                           POST   /domains(.:format)                                                {:controller=>"domains", :action=>"create"}
+                                new_domain GET    /domains/new(.:format)                                            {:controller=>"domains", :action=>"new"}
+                               edit_domain GET    /domains/:id/edit(.:format)                                       {:controller=>"domains", :id=>/[^\/]+/, :action=>"edit"}
+                                    domain GET    /domains/:id(.:format)                                            {:controller=>"domains", :id=>/[^\/]+/, :action=>"show"}
+                                           PUT    /domains/:id(.:format)                                            {:controller=>"domains", :id=>/[^\/]+/, :action=>"update"}
+                                           DELETE /domains/:id(.:format)                                            {:controller=>"domains", :id=>/[^\/]+/, :action=>"destroy"}
+     auto_complete_search_config_templates GET    /config_templates/auto_complete_search(.:format)                  {:controller=>"config_templates", :action=>"auto_complete_search"}
+        build_pxe_default_config_templates GET    /config_templates/build_pxe_default(.:format)                     {:controller=>"config_templates", :action=>"build_pxe_default"}
+                          config_templates GET    /config_templates(.:format)                                       {:controller=>"config_templates", :action=>"index"}
+                                           POST   /config_templates(.:format)                                       {:controller=>"config_templates", :action=>"create"}
+                       new_config_template GET    /config_templates/new(.:format)                                   {:controller=>"config_templates", :action=>"new"}
+                      edit_config_template GET    /config_templates/:id/edit(.:format)                              {:controller=>"config_templates", :id=>/[^\/]+/, :action=>"edit"}
+                           config_template PUT    /config_templates/:id(.:format)                                   {:controller=>"config_templates", :id=>/[^\/]+/, :action=>"update"}
+                                           DELETE /config_templates/:id(.:format)                                   {:controller=>"config_templates", :id=>/[^\/]+/, :action=>"destroy"}
+                 bootfiles_operatingsystem GET    /operatingsystems/:id/bootfiles(.:format)                         {:controller=>"operatingsystems", :action=>"bootfiles"}
+     auto_complete_search_operatingsystems GET    /operatingsystems/auto_complete_search(.:format)                  {:controller=>"operatingsystems", :action=>"auto_complete_search"}
+                          operatingsystems GET    /operatingsystems(.:format)                                       {:controller=>"operatingsystems", :action=>"index"}
+                                           POST   /operatingsystems(.:format)                                       {:controller=>"operatingsystems", :action=>"create"}
+                       new_operatingsystem GET    /operatingsystems/new(.:format)                                   {:controller=>"operatingsystems", :action=>"new"}
+                      edit_operatingsystem GET    /operatingsystems/:id/edit(.:format)                              {:controller=>"operatingsystems", :action=>"edit"}
+                           operatingsystem GET    /operatingsystems/:id(.:format)                                   {:controller=>"operatingsystems", :action=>"show"}
+                                           PUT    /operatingsystems/:id(.:format)                                   {:controller=>"operatingsystems", :action=>"update"}
+                                           DELETE /operatingsystems/:id(.:format)                                   {:controller=>"operatingsystems", :action=>"destroy"}
+                auto_complete_search_media GET    /media/auto_complete_search(.:format)                             {:controller=>"media", :action=>"auto_complete_search"}
+                                     media GET    /media(.:format)                                                  {:controller=>"media", :action=>"index"}
+                                           POST   /media(.:format)                                                  {:controller=>"media", :action=>"create"}
+                                new_medium GET    /media/new(.:format)                                              {:controller=>"media", :action=>"new"}
+                               edit_medium GET    /media/:id/edit(.:format)                                         {:controller=>"media", :action=>"edit"}
+                                    medium GET    /media/:id(.:format)                                              {:controller=>"media", :action=>"show"}
+                                           PUT    /media/:id(.:format)                                              {:controller=>"media", :action=>"update"}
+                                           DELETE /media/:id(.:format)                                              {:controller=>"media", :action=>"destroy"}
+               auto_complete_search_models GET    /models/auto_complete_search(.:format)                            {:controller=>"models", :action=>"auto_complete_search"}
+                                    models GET    /models(.:format)                                                 {:controller=>"models", :action=>"index"}
+                                           POST   /models(.:format)                                                 {:controller=>"models", :action=>"create"}
+                                 new_model GET    /models/new(.:format)                                             {:controller=>"models", :action=>"new"}
+                                edit_model GET    /models/:id/edit(.:format)                                        {:controller=>"models", :action=>"edit"}
+                                     model GET    /models/:id(.:format)                                             {:controller=>"models", :action=>"show"}
+                                           PUT    /models/:id(.:format)                                             {:controller=>"models", :action=>"update"}
+                                           DELETE /models/:id(.:format)                                             {:controller=>"models", :action=>"destroy"}
+        auto_complete_search_architectures GET    /architectures/auto_complete_search(.:format)                     {:controller=>"architectures", :action=>"auto_complete_search"}
+                             architectures GET    /architectures(.:format)                                          {:controller=>"architectures", :action=>"index"}
+                                           POST   /architectures(.:format)                                          {:controller=>"architectures", :action=>"create"}
+                          new_architecture GET    /architectures/new(.:format)                                      {:controller=>"architectures", :action=>"new"}
+                         edit_architecture GET    /architectures/:id/edit(.:format)                                 {:controller=>"architectures", :action=>"edit"}
+                              architecture GET    /architectures/:id(.:format)                                      {:controller=>"architectures", :action=>"show"}
+                                           PUT    /architectures/:id(.:format)                                      {:controller=>"architectures", :action=>"update"}
+                                           DELETE /architectures/:id(.:format)                                      {:controller=>"architectures", :action=>"destroy"}
+              auto_complete_search_ptables GET    /ptables/auto_complete_search(.:format)                           {:controller=>"ptables", :action=>"auto_complete_search"}
+                                   ptables GET    /ptables(.:format)                                                {:controller=>"ptables", :action=>"index"}
+                                           POST   /ptables(.:format)                                                {:controller=>"ptables", :action=>"create"}
+                                new_ptable GET    /ptables/new(.:format)                                            {:controller=>"ptables", :action=>"new"}
+                               edit_ptable GET    /ptables/:id/edit(.:format)                                       {:controller=>"ptables", :action=>"edit"}
+                                    ptable GET    /ptables/:id(.:format)                                            {:controller=>"ptables", :action=>"show"}
+                                           PUT    /ptables/:id(.:format)                                            {:controller=>"ptables", :action=>"update"}
+                                           DELETE /ptables/:id(.:format)                                            {:controller=>"ptables", :action=>"destroy"}
+hardware_profile_selected_compute_resource POST   /compute_resources/:id/hardware_profile_selected(.:format)        {:controller=>"compute_resources", :id=>/[^\/]+/, :action=>"hardware_profile_selected"}
+         cluster_selected_compute_resource POST   /compute_resources/:id/cluster_selected(.:format)                 {:controller=>"compute_resources", :id=>/[^\/]+/, :action=>"cluster_selected"}
+                 power_compute_resource_vm PUT    /compute_resources/:compute_resource_id/vms/:id/power(.:format)   {:controller=>"compute_resources_vms", :id=>/[^\/]+/, :compute_resource_id=>/[^\/]+/, :action=>"power"}
+               console_compute_resource_vm GET    /compute_resources/:compute_resource_id/vms/:id/console(.:format) {:controller=>"compute_resources_vms", :id=>/[^\/]+/, :compute_resource_id=>/[^\/]+/, :action=>"console"}
+                      compute_resource_vms GET    /compute_resources/:compute_resource_id/vms(.:format)             {:controller=>"compute_resources_vms", :compute_resource_id=>/[^\/]+/, :action=>"index"}
+                                           POST   /compute_resources/:compute_resource_id/vms(.:format)             {:controller=>"compute_resources_vms", :compute_resource_id=>/[^\/]+/, :action=>"create"}
+                   new_compute_resource_vm GET    /compute_resources/:compute_resource_id/vms/new(.:format)         {:controller=>"compute_resources_vms", :compute_resource_id=>/[^\/]+/, :action=>"new"}
+                  edit_compute_resource_vm GET    /compute_resources/:compute_resource_id/vms/:id/edit(.:format)    {:controller=>"compute_resources_vms", :id=>/[^\/]+/, :compute_resource_id=>/[^\/]+/, :action=>"edit"}
+                       compute_resource_vm GET    /compute_resources/:compute_resource_id/vms/:id(.:format)         {:controller=>"compute_resources_vms", :id=>/[^\/]+/, :compute_resource_id=>/[^\/]+/, :action=>"show"}
+                                           PUT    /compute_resources/:compute_resource_id/vms/:id(.:format)         {:controller=>"compute_resources_vms", :id=>/[^\/]+/, :compute_resource_id=>/[^\/]+/, :action=>"update"}
+                                           DELETE /compute_resources/:compute_resource_id/vms/:id(.:format)         {:controller=>"compute_resources_vms", :id=>/[^\/]+/, :compute_resource_id=>/[^\/]+/, :action=>"destroy"}
+    auto_complete_search_compute_resources GET    /compute_resources/auto_complete_search(.:format)                 {:controller=>"compute_resources", :action=>"auto_complete_search"}
+       provider_selected_compute_resources POST   /compute_resources/provider_selected(.:format)                    {:controller=>"compute_resources", :action=>"provider_selected"}
+         test_connection_compute_resources PUT    /compute_resources/test_connection(.:format)                      {:controller=>"compute_resources", :action=>"test_connection"}
+                   compute_resource_images GET    /compute_resources/:compute_resource_id/images(.:format)          {:controller=>"images", :compute_resource_id=>/[^\/]+/, :action=>"index"}
+                                           POST   /compute_resources/:compute_resource_id/images(.:format)          {:controller=>"images", :compute_resource_id=>/[^\/]+/, :action=>"create"}
+                new_compute_resource_image GET    /compute_resources/:compute_resource_id/images/new(.:format)      {:controller=>"images", :compute_resource_id=>/[^\/]+/, :action=>"new"}
+               edit_compute_resource_image GET    /compute_resources/:compute_resource_id/images/:id/edit(.:format) {:controller=>"images", :id=>/[^\/]+/, :compute_resource_id=>/[^\/]+/, :action=>"edit"}
+                    compute_resource_image GET    /compute_resources/:compute_resource_id/images/:id(.:format)      {:controller=>"images", :id=>/[^\/]+/, :compute_resource_id=>/[^\/]+/, :action=>"show"}
+                                           PUT    /compute_resources/:compute_resource_id/images/:id(.:format)      {:controller=>"images", :id=>/[^\/]+/, :compute_resource_id=>/[^\/]+/, :action=>"update"}
+                                           DELETE /compute_resources/:compute_resource_id/images/:id(.:format)      {:controller=>"images", :id=>/[^\/]+/, :compute_resource_id=>/[^\/]+/, :action=>"destroy"}
+                         compute_resources GET    /compute_resources(.:format)                                      {:controller=>"compute_resources", :action=>"index"}
+                                           POST   /compute_resources(.:format)                                      {:controller=>"compute_resources", :action=>"create"}
+                      new_compute_resource GET    /compute_resources/new(.:format)                                  {:controller=>"compute_resources", :action=>"new"}
+                     edit_compute_resource GET    /compute_resources/:id/edit(.:format)                             {:controller=>"compute_resources", :id=>/[^\/]+/, :action=>"edit"}
+                          compute_resource GET    /compute_resources/:id(.:format)                                  {:controller=>"compute_resources", :id=>/[^\/]+/, :action=>"show"}
+                                           PUT    /compute_resources/:id(.:format)                                  {:controller=>"compute_resources", :id=>/[^\/]+/, :action=>"update"}
+                                           DELETE /compute_resources/:id(.:format)                                  {:controller=>"compute_resources", :id=>/[^\/]+/, :action=>"destroy"}
+              auto_complete_search_subnets GET    /subnets/auto_complete_search(.:format)                           {:controller=>"subnets", :action=>"auto_complete_search"}
+                            import_subnets GET    /subnets/import(.:format)                                         {:controller=>"subnets", :action=>"import"}
+                   create_multiple_subnets POST   /subnets/create_multiple(.:format)                                {:controller=>"subnets", :action=>"create_multiple"}
+                            freeip_subnets POST   /subnets/freeip(.:format)                                         {:controller=>"subnets", :action=>"freeip"}
+                                   subnets GET    /subnets(.:format)                                                {:controller=>"subnets", :action=>"index"}
+                                           POST   /subnets(.:format)                                                {:controller=>"subnets", :action=>"create"}
+                                new_subnet GET    /subnets/new(.:format)                                            {:controller=>"subnets", :action=>"new"}
+                               edit_subnet GET    /subnets/:id/edit(.:format)                                       {:controller=>"subnets", :action=>"edit"}
+                                    subnet PUT    /subnets/:id(.:format)                                            {:controller=>"subnets", :action=>"update"}
+                                           DELETE /subnets/:id(.:format)                                            {:controller=>"subnets", :action=>"destroy"}
+                                                  /unattended/template/:id/:hostgroup(.:format)                     {:controller=>"unattended", :action=>"template"}
+                                      root        /(.:format)                                                       {:controller=>"dashboard", :action=>"index"}
+                                 dashboard        /dashboard(.:format)                                              {:controller=>"dashboard", :action=>"index"}
+           auto_complete_search_dashboards        /dashboard/auto_complete_search(.:format)                         {:controller=>"hosts", :action=>"auto_complete_search"}
+                                statistics        /statistics(.:format)                                             {:controller=>"statistics", :action=>"index"}
+                                    status        /status(.:format)                                                 {:controller=>"home", :action=>"status"}
+                                                  /unattended(/:action(/:id(.format)))(.:format)                    {:controller=>"unattended"}
+                                      task GET    /tasks/:id(.:format)                                              {:controller=>"tasks", :action=>"show"}
+                                                  /*a                                                               {:controller=>"errors", :action=>"routing"}

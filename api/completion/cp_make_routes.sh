@@ -1,8 +1,9 @@
 #!/bin/sh
 
-. ~/Scripts/katello/katello_config.sh
-
 SCRIPT_DIR="$( cd -P "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
+
+. $SCRIPT_DIR/../../config.sh
+
 
 #get output of buildr apicrawl
 cd $CP_SRC_HOME
