@@ -2,16 +2,15 @@
 
 SCRIPT_DIR="$( cd -P "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
 
-. $SCRIPT_DIR/../../config.sh
-
-
+export KATELLO_CONFIG_FILE
+source "$KATELLO_CONFIG_FILE"
 
 #get output of rake routes
 cd $FOREMAN_SRC_HOME
-rake routes > $SCRIPT_DIR/files/foreman_routes.txt
+bundle exec rake routes > $SCRIPT_DIR/files/foreman_routes.txt
 
 #crop only the unique routes form this file routes
-cat $SCRIPT_DIR/files/foreman_routes.txt | sed -e 's/(.:format)//g' -e 's/\:[^/ ]*/ID/g' -e 's/[^/]*//' | awk '{print $1}' | sed -e 's/\/new$//' -e 's/\/edit$//' | egrep -e '^/[a-z].*$' | sort -u > $SCRIPT_DIR/files/foreman_routes_tmp_1.txt
+cat $SCRIPT_DIR/files/foreman_routes.txt | grep "/api/" | sed -e 's/(.:format)//g' -e 's/\/api//g' -e 's/\:[^/ ]*/ID/g' -e 's/[^/]*//' | awk '{print $1}' | sed -e 's/\/new$//' -e 's/\/edit$//' | egrep -e '^/[a-z].*$' | sort -u > $SCRIPT_DIR/files/foreman_routes_tmp_1.txt
 
 #sort the file with routes
 cat $SCRIPT_DIR/files/foreman_routes_tmp_1.txt | sort -u > $SCRIPT_DIR/files/foreman_routes_modified.txt

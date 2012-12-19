@@ -106,7 +106,7 @@ pulp-api() {
 # 2nd param: method
 # 3rd param: data
 fm-api() {
-  call-api "$FOREMAN_API_URL" "admin:admin" $@
+  call-api "$FOREMAN_API_URL" "$FOREMAN_USER:$FOREMAN_PASSWORD" $@
 }
 
 

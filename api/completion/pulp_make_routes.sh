@@ -2,7 +2,8 @@
 
 SCRIPT_DIR="$( cd -P "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
 
-. $SCRIPT_DIR/../../config.sh
+export KATELLO_CONFIG_FILE
+source "$KATELLO_CONFIG_FILE"
 
 
 controllers_path="$PULP_SRC_HOME/server/webservices/controllers"; 

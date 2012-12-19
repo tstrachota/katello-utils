@@ -2,10 +2,9 @@
 
 . ~/Scripts/katello/katello_config.sh
 
-SCRIPT_DIR="$( cd -P "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
+export KATELLO_CONFIG_FILE
+source "$KATELLO_CONFIG_FILE"
 
-
-#/Scripts/katello/api_completion/files/
 
 #get output of rake routes
 cd $KAT_SRC_HOME
