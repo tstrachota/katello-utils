@@ -1,0 +1,17 @@
+ABOUT:
+  Bash script for filling katello with test data.
+
+
+OPTIONS:
+  -h    Show help message
+  -l    List available scripts
+
+USAGE:
+  katello_fill.sh <data_set_1> <data_set_2>
+
+  Eg.
+  katello_fill.sh chrome
+
+
+REQUIREMENTS:
+  Reqires katello-cli installed and configured.
