@@ -5,6 +5,9 @@ ABOUT:
   api.sh        - api functions (kat-api, pulp-api, cp-api)
   completion.sh - tab-completion scripts for the routes
 
+  both api and completion require environment variable
+  $KATELLO_CONFIG_FILE set to path to a config file.
+
 
 USAGE:
   kat-api  <api route> <method> <data>

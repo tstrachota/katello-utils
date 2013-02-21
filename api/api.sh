@@ -1,7 +1,9 @@
 #!/bin/sh
 
 SCRIPT_DIR="$( cd -P "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
-. $SCRIPT_DIR/../config.sh
+
+export KATELLO_CONFIG_FILE
+source "$KATELLO_CONFIG_FILE"
 
 # Use curl to call the api
 # 1st param: hostname
@@ -15,7 +17,7 @@ call-api() {
   path=$1; shift
   method=$1; shift
   data=$@
-    
+
   if [ -n "$method" ]; then
     method="-X $method"
     method="`echo $method | tr '[:lower:]' '[:upper:]'`"
@@ -23,7 +25,7 @@ call-api() {
     method=""
   fi
 
-  
+
   if [ -n "$data" ]; then
     echo "curl -H \"Content-Type: application/json\" -H \"Accept: application/json\" $method -d "$data" -k -u $usr_psswd $h_name$path"
     response=`curl -H "Content-Type: application/json" -H "Accept: application/json" $method -d "$data" -k -u $usr_psswd $h_name$path`
@@ -57,7 +59,7 @@ call-oauth-api() {
   path=$1; shift
   method=$1; shift
   data=$@
-    
+
   if [ -n "$method" ]; then
     method="`echo $method | tr '[:lower:]' '[:upper:]'`"
   else
