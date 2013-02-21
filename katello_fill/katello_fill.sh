@@ -5,10 +5,14 @@ source "$KATELLO_CONFIG_FILE"
 
 SCRIPT_DIR=$( cd -P "$( dirname "${BASH_SOURCE[0]}" )" && pwd )
 
-KAT=$KAT_CLI_HOME/bin/katello
+if [ "$KAT_CLI_HOME" != "" ]; then
+  KAT=$KAT_CLI_HOME/bin/katello
+else
+  KAT=katello
+fi
 DATA_DIR=$SCRIPT_DIR/test_data
 
-CMD="$KAT -u $KAT_USER -p $KAT_PASSWORD"
+CMD="$KAT -u ${KAT_USER:-admin} -p ${KAT_PASSWORD:-admin}"
 
 usage() {
 cat <<USAGE
